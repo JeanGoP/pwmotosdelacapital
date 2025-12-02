@@ -1,0 +1,23 @@
+/* Flecha personalizada en el botón */
+.form-selectbutoon  {
+    position: relative;
+  }
+  
+  /* Insertamos la flecha como pseudo-elemento */
+  .form-selectbutoon::after {
+
+    font-size: 0.8rem;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%) rotate(0deg);
+    transition: transform 0.5s ease;
+    pointer-events: none; /* no bloquea clics */
+    color: #7d796c; /* gris Bootstrap */
+  }
+  
+  /* Cuando está abierto, la flecha rota */
+  .form-selectbutoon.open::after {
+    transform: translateY(-50%) rotate(180deg);
+  }
+  

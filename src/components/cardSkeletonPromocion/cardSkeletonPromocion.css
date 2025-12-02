@@ -1,0 +1,60 @@
+
+.previo-promocion-card {
+  width: 350px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Efecto Skeleton */
+.skeleton-promocion {
+background: linear-gradient(90deg, #ffcccc 25%, #ffe6e6 50%, #ffcccc 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+  border-radius: 8px;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Imagen */
+.previo-promocion-img {
+  width: 100%;
+  height: 180px;
+}
+
+/* Título */
+.previo-promocion-title {
+  width: 70%;
+  height: 20px;
+}
+
+/* Subtítulo */
+.previo-promocion-subtitle {
+  width: 50%;
+  height: 16px;
+}
+
+/* Precios */
+.previo-promocion-price {
+  width: 60%;
+  height: 18px;
+}
+
+/* Botón */
+.previo-promocion-btn {
+  width: 100%;
+  height: 40px;
+  border-radius: 8px;
+}

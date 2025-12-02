@@ -1,0 +1,44 @@
+.motocicleta-container {
+    position: relative;
+    height: 70vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .motocicleta-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); 
+    z-index: 1;
+  }
+
+  .row--cards-especificiacion{
+    display: flex;
+    align-items: stretch; 
+  }
+  
+.row--cards-especificiacion > [class*="col-"] {
+  display: flex;
+  flex-direction: column;
+}
+
+.contenido--caracteristicas {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+
+
+@media (min-width: 1400px) { /* pantallas muy grandes */
+  .contenido--caracteristicas {
+    padding-left: 150px;
+    padding-right: 150px;
+  }
+}

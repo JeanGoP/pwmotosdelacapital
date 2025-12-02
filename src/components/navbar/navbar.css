@@ -1,0 +1,185 @@
+/* General navbar */
+.navbar {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.navbar-brand {
+  cursor: pointer;
+  transition: transform 0.3s ease; /* transición fluida */
+}
+
+.navbar-brand:hover {
+  transform: scale(1.05); /* crece un poquito al hacer hover */
+}
+
+/* Espaciado de items */
+.navbar-nav .nav-item {
+  margin: 0 15px;
+}
+
+/* Botón WhatsApp (desktop) */
+.navbar-nav .btn-whatsapp-menu {
+  background-color: rgb(248, 249, 250);
+  border: 1px solid rgb(88, 86, 86);
+  border-radius: 8px;
+  padding: 0.25rem 0.75rem;
+  font-size: 14px;
+  line-height: 1.2;
+  display: inline-flex;
+  align-items: center;
+  height: 32px;
+  margin-top: 5px;
+  transition: all 0.3s ease;
+  font-family: Good Timing, serif;
+}
+
+.navbar-nav .btn-whatsapp-menu:hover {
+  background-color: #0a1f44;
+  color: white;
+  border-color: #0a1f44;
+}
+
+/* Links del menú */
+.nav-a-item {
+  color: rgb(44, 44, 44);
+  cursor: pointer;
+  transition: all 0.4s ease;
+  font-size: 14px;
+  font-family: Good Timing, serif;
+}
+
+.nav-a-item:hover {
+  color: #d80027;
+}
+
+.nav-a-item.active {
+  color: #d80027 !important;
+  /* font-weight: 600; */
+  border-bottom: 2px solid #d80027;
+}
+
+/* Logos */
+.logo-left {
+  height: 35px;
+  margin-right: 10px;
+  margin-left: 45px;   /* separa el logo izquierdo */
+}
+
+.logo-right {
+  height: 45px;
+  margin-left: 40px;
+  margin-right: 45px;  /* separa el logo derecho */
+}
+
+.logo-hero-mobile {
+  height: 50px;
+}
+
+/* Divider en mobile */
+.menu-divider {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 10px auto;
+  width: 80%;
+}
+
+/* Títulos */
+.menu--subtitulo--img {
+  font-size: clamp(0.6rem, 0.02vw, 0.8rem);
+  color: #0a1f44;
+}
+.menu--titulo--img {
+  font-size: clamp(0.9rem, 0.02vw, 1.8rem);
+  font-family: Good Timing, serif;
+  color: #0a1f44;
+}
+
+/* Scroll suave */
+html {
+  scroll-behavior: smooth;
+}
+[id] {
+  scroll-margin-top: 80px; /* altura navbar */
+}
+
+/* Links estilo */
+.nav-link {
+  cursor: pointer;
+}
+
+/* 🔹 Cuando el menú colapsa (mobile) */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    text-align: left;
+  }
+
+  .navbar-nav {
+    align-items: flex-start !important;
+  }
+
+  .navbar-nav .nav-item {
+    width: 100%;
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+
+  }
+
+  .navbar-nav .nav-link {
+    padding-left: 10px;
+    width: 100%;
+    font-size: 16px;
+  }
+
+  /* 🔸 WhatsApp se comporta como item normal en mobile */
+  .navbar-nav .btn-whatsapp-menu {
+    all: unset; /* elimina estilos del botón */
+    display: block;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  /* 🔸 Hover en todos los items en mobile */
+  .navbar-nav .nav-item:hover,.navbar-nav .btn-whatsapp-menu:hover{
+    background-color: #f2f2f2; /* fondo gris */
+  }
+ 
+  .navbar-nav .nav-link:hover, .navbar-nav .btn-whatsapp-menu:hover{
+    color: #d80027 !important;
+  }
+  .ul--style--white{
+    background-color: white;
+  }
+  .li--btnwhatsapp{
+    margin-left: 0px !important;
+  }
+}
+/* Quitar borde y fondo del botón */
+.custom-toggler {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  padding: 0.25rem 0.5rem;
+}
+
+/* Íconos */
+.custom-toggler .icon-close {
+  display: none; /* por defecto oculto */
+}
+
+/* Cuando está abierto → mostramos la X */
+.custom-toggler[aria-expanded="true"] .icon-hamburger {
+  display: none;
+}
+.custom-toggler[aria-expanded="true"] .icon-close {
+  display: inline;
+}
+
+/* Cursor pointer */
+.custom-toggler {
+  cursor: pointer;
+}

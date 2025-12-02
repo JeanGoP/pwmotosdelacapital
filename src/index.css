@@ -1,0 +1,35 @@
+/* --- Chrome, Edge, Safari --- */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f8f9fa; /* gris claro del fondo */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #b0b0b0; /* gris por defecto */
+    border-radius: 6px;
+    border: 2px solid #f8f9fa; /* separa el thumb del track para evitar mezcla visual */
+    transition: background-color 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #0a1f44; /* rojo sólido al pasar mouse/arrastrar */
+    border-color: #f8f9fa; /* mantiene separación del track */
+}
+
+/* --- Firefox --- */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #b0b0b0 #f8f9fa;
+}
+
+html:hover {
+    scrollbar-color: #0a1f44 #f8f9fa;
+}
+
+body{
+    font-family: "Poppins", "Inter", "Roboto", sans-serif;
+}

@@ -1,0 +1,125 @@
+.viewer-container {
+    background:#f9fafb;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    padding: 16px;
+    text-align: center;
+    user-select: none;
+    max-width: 100%;
+    margin: auto;
+  }
+  .viewer-container2 {
+    background:#f9fafb;
+     border-top-left-radius: 16px;
+    border-top-right-radius: 16px; 
+
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    padding: 16px;
+    text-align: center;
+    user-select: none;
+    max-width: 100%;
+    margin: auto;
+  }
+  .viewer-header {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .viewer-badge {
+    background: #d32f2f;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+  
+  .viewer-image {
+    width: 100%;
+    height: auto;
+    max-height: 700px;
+    object-fit: contain;
+    margin: 12px 0;
+
+  }
+  .contenido--viewer-footer{
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    padding: 16px;
+    text-align: center;
+    user-select: none;
+    max-width: 100%;
+    margin: auto;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+  }
+  /* Footer con slider */
+  .viewer-footer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    background: #ffff !important;
+
+  }
+  
+  .viewer-label {
+    min-width: 50px;
+    color: #555f6e;
+  }
+  
+  /* Barra slider */
+  .viewer-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    flex: 1;
+    height: 10px;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    background: linear-gradient(
+      to right,
+      #000 0%,
+      #000 calc(var(--val, 0%) - 5%),
+      #555 calc(var(--val, 0%) - 2%),
+      #eee var(--val, 0%),
+      #eee 100%
+    );
+    transition: background 0.2s ease;
+  }
+  
+  /* Thumb (punto rojo) */
+  .viewer-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #d32f2f;
+    border: none;
+    cursor: pointer;
+    margin-top: -4px;
+    box-shadow: 0 0 6px rgba(0,0,0,0.3);
+    transition: transform 0.2s ease;
+  }
+  .viewer-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+  }
+  .viewer-slider::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #d32f2f;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 6px rgba(0,0,0,0.3);
+    transition: transform 0.2s ease;
+  }
+  
+  /* Contador */
+  .viewer-counter {
+    color: #d32f2f;
+    font-weight: bold;
+    font-size: 15px;
+  }
+  

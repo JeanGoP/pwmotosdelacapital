@@ -1,0 +1,63 @@
+.interesar-card {
+    background: linear-gradient(180deg, #d00023 0%, #c70023 100%);
+    color: #fff;
+    border-radius: 12px;
+    padding: 32px;
+    text-align: center;
+  }
+  
+  .interesar-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  
+  .interesar-text {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+  }
+  
+  .interesar-btn {
+    background-color: #fff;
+    color: #c70023;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    width: 100%;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+  }
+  
+  .interesar-btn:hover {
+    background-color: #f1f1f1;
+    color: #a0001c;
+    transform: scale(1.04);
+  }
+  
+  .interesar-btn-B {
+    background-color: #c70023;
+    color:#fff;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    width: 100%;
+    transition: all 0.3s ease;
+ 
+  }
+  
+  .interesar-btn-B:hover {
+    background-color: #f1f1f1;
+    color: #a0001c;
+    transform: scale(1.04);
+  }
+  
+  .interesar-card--B{
+    background: #010101;
+    color: #fff;
+    border-radius: 12px;
+    padding: 32px;
+    text-align: center;
+  }
+  

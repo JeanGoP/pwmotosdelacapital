@@ -1,0 +1,32 @@
+.titulo-seccion {
+    text-align: center;
+    padding: 60px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    
+  }
+  
+  .titulo-seccionh2 {
+    font-size: clamp(2.8rem, 4vw, 3.2rem);
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 19px;
+    font-family: Good Timing, serif;
+  }
+  
+  .titulo-seccion .linea {
+    width: 100px;
+    height: 5px;
+    background-color: #c6002b; /* Rojo Hero */
+    margin: 0 auto 20px;
+    border-radius: 2px;
+    
+  }
+  
+  .titulo-seccion p {
+    font-size: 21px;
+    color: #444;
+    line-height: 1.6;
+    color: #cacaca;
+  }
+  

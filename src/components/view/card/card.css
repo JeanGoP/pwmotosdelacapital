@@ -1,0 +1,869 @@
+.custom-card-P {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: all .3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s ease;
+    cursor: pointer;
+    height: 100%;
+  
+  }
+  
+  .custom-card-P:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(221, 7, 7, 0.15);
+  }
+  
+
+  .card-title-P {
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 0.5rem;
+    color: #d80027;
+    font-family: Good Timing, serif;
+  }
+  
+  .card-text-P {
+    color: #0a1f44;
+    font-size: 1.1rem;
+    font-family: Poppins, sans-serif;
+  }
+  .card-icon-P {
+    height: 53px;
+    width: 53px;
+    color: #d80027;
+    margin-bottom: 1rem;
+  }
+
+
+
+  .moto-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    overflow: hidden; 
+    transition: all 0.3s ease;
+    background: #fff;
+    cursor: pointer;
+    margin: 5px;
+    box-shadow: 0 4px 10px rgba(71, 71, 71, 0.15);
+ 
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    height: 100%;               
+  }
+  
+  /* Quitamos el movimiento vertical */
+  .moto-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.22);
+  }
+  
+  .moto-card-header {
+    position: relative;
+    background: #ffffff;
+    padding: 10px;
+    text-align: center;
+    overflow: hidden; /* Asegura que la imagen no se salga al crecer */
+    padding-bottom: 75px;
+    padding-top: 40px;
+  }
+  
+  .moto-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.4s ease; /* Suavidad del efecto */
+  }
+  
+  /* 🔹 Efecto de crecer la imagen */
+  .moto-card:hover .moto-img {
+    transform: scale(1.1);
+  }
+  
+  .categoria {
+    position: absolute;
+    top: 270px;
+    left: 20px;
+    background: #0a1f44;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 4px 8px;
+    border-radius: 20px;
+  }
+  
+  .moto-card-body {
+    padding: 12px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* empuja el botón al fondo */
+    padding-left: 20px;
+  }
+  
+  .moto-title {
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    margin-top: 6px;
+    color: #0a1f44;
+  }
+  
+  .moto-description {
+    color: #464d58;
+    font-size: 0.75rem;
+    margin-bottom: 8px;
+  }
+  
+  .moto-precio {
+    color:#e30613;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    
+  }
+  .precio-icono {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    width: 100%;
+  }
+  .moto-btn {
+    background: #d80027;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    width: 100%;
+    height: 45px;
+  }
+  
+  .moto-icono-right {
+    position: relative;
+    right: 10px;
+    bottom: 9px;
+    margin-left: 8px; /* separación del texto */
+    transition: transform 0.5s ease; /* suavidad del movimiento */
+    background: '#0a1f44';
+  }
+  
+  /* Cuando paso el mouse por la card, el icono se mueve hacia la izquierda */
+  .moto-card:hover .moto-icono-right {
+    transform: translateX(5px); /* se desplaza un poco a la izquierda */
+  }
+  /* .moto-btn:hover {
+    transform: scale(1.07);
+  } */
+  
+  
+
+  .card-conocer {
+    background: #fff;
+    border-radius: 16px;
+    padding: 30px;
+    transition: all 0.5s ease;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card-conocer:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-body-conocer {
+    flex: 1; /* Ocupa todo el espacio vertical disponible */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card-body-conocer .card-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+color: #000;
+    text-align: center;
+    font-family: Good Timing, serif;
+  }
+  
+  .card-body-conocer .card-text {
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    flex-grow: 1; /* Empuja el resto hacia abajo */
+    text-align: center;
+  }
+  
+  .card-list-conocer {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 25px 0;
+  }
+  
+  .card-list-conocer li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #333;
+    display: flex;
+    align-items: center;
+  }
+  
+  .card-list-conocer li::before {
+    content: "•";
+    color: #d80027;
+    font-weight: bolder;
+    display: inline-block;
+    font-size: 20px;
+    width: 20px;
+  }
+  
+  .btn-consultar-conocer {
+    background: #d80027;
+    color: white;
+    border: none;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 10px;
+    width: 100%;
+    transition: all 0.5s ease;
+  }
+  
+  .btn-consultar-conocer:hover {
+    background: #b8001f;
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.25);
+  }
+  
+/* Card Servicio PosVenta*/
+.card-mantenimiento {
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 32px;
+  border: 2px solid #f0eeee;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  text-align: center; 
+}
+
+.card-mantenimiento:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border-color: #d60000;
+}
+.card-mantenimiento2 {
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 32px;
+  border: 2px solid #f0eeee;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  text-align: center; 
+  max-width: 400px;
+}
+
+.card-mantenimiento2:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border-color: #d60000;
+}
+/* Ícono circular */
+.icono-mantenimiento {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 16px auto;
+  border-radius: 50%;
+  background-color: #f8f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  color: #d60000;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+.icono-mantenimiento:hover{
+  background-color: #f8e6e6;
+}
+
+/* Contenido */
+.titulo-mantenimiento {
+  font-weight: 700;
+  font-size: 21px;
+  margin-bottom: 8px;
+  color: #0a1f44;
+  font-family: Good Timing, serif;
+  padding-top: 10px;
+}
+
+.descripcion-mantenimiento {
+  color: #606d79;
+  font-size: 15px;
+  padding-top: 10px;
+  margin-bottom: 16px;
+}
+
+.subtitulo-mantenimiento {
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+/* Lista */
+.lista-mantenimiento {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left; 
+  display: block;  
+  
+}
+
+.lista-mantenimiento li {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  font-size: 17px; 
+  color: #50565c;
+}
+
+.lista-mantenimiento li::before {
+  content: "•";
+  color: #d60000;
+  margin-right: 10px;
+  font-size: 30px; 
+  line-height: 1;
+}
+
+.btn-contacto-servicio{
+  background: #d80027;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 3px 9px;
+  min-width: 170px;
+  max-width: 1700px;
+  min-height: 37px;
+  font-size: 15px;
+  font-weight: 600;
+  transition: all 0.5s ease;
+}
+
+.btn-contacto-servicio:hover{
+  background: #d80027;
+  color: white;
+  border: none;
+  transform: scale(1.1);
+
+}
+.card-mantenimiento-destacado {
+  background-color: #fde8ea; /* rojo muy suave */
+  border-left: 4px solid #d80027; /* efecto borde rojo */
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.texto-destacado {
+  font-weight: 700;
+  color: #d80027;
+  font-size: 16px;
+  margin: 0 0 4px 0;
+}
+
+.card-mantenimiento-destacado2 {
+  background-color: #fde8ea; /* rojo muy suave */
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.texto-destacado2 {
+  color: #d80027;
+  font-size: 13px;
+  margin: 0 0 4px 0;
+}
+.texto-condiciones {
+  font-size: 14px;
+  color: #6c757d;
+  margin: 0;
+}
+
+/* Card Servicio Postventa*/
+.card-servicio {
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+  max-width: 700px;
+  margin: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.card-servicio h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.card-servicio p {
+  font-size: 1.05rem;
+  color: #6b7280; 
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.botones {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.btn-rojo-servicio {
+  background-color: #d6001c;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.btn-rojo-servicio:hover {
+  background: #b8001f;
+  transform: scale(1.05);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+.btn-blanco-servicio {
+  background: white;
+  color: #d6001c;
+  border: 1px solid #d6001c;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.btn-blanco-servicio:hover {
+  background: #fff0f3;
+  transform: scale(1.05);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.25);
+}
+@media (max-width: 600px) {
+  .botones {
+    flex-direction: column; 
+    align-items: stretch; 
+  }
+
+  .btn-rojo-servicio,
+  .btn-blanco-servicio {
+    width: 100%; 
+    font-size: 1rem;
+  }
+}
+
+/*Card Aliados */
+.custom-card-aliado {
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  background: #fff;
+  padding: 15px;
+  text-align: center;
+  transition: all 0.5s ease,box-shadow 0.5s ease;
+
+  border: 2px solid #e9e9e9;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 10px;
+  height: 100%;
+}
+
+.custom-card-aliado:hover {
+  box-shadow: 0 10px 18px rgba(71, 71, 71, 0.22);
+  border-color: #d6001c;
+  transform: translateY(-10px);
+}
+
+.card-logo-aliado {
+  background-color: #f4f5f7;
+  border-radius: 12px;
+  padding: 10px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 65px;
+}
+
+.card-logo-aliado img {
+  max-width: 90%;
+  height: 85%;
+}
+
+.card-title-aliado {
+  font-size: 17px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-top: 10px;
+
+
+}
+
+.card-description-aliado {
+  font-size: 15px;
+  color: #555;
+  min-height: 60px;
+  flex-grow: 1;
+  display: flex;
+  align-items: flex-start;
+  
+}
+@media (max-width: 600px) {
+  .card-logo-aliado img {
+    max-width: 60%;
+    height: 40px;
+  }
+}
+@media (max-width: 1200px) {
+  .card-logo-aliado img {
+    max-width: 80%;
+    height: 40px;
+  }
+}
+
+/* card cotizacion*/
+.cotizacion-container-card {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  /* margin: 40px 0; */
+}
+
+.card-cotizacion {
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px 20px;
+  text-align: center;
+  width: 280px;
+  max-width: 100%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-cotizacion:hover {
+  /* transform: translateY(-5px); */
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.icon-wrapper {
+  background: #fde9ec;
+  color: #c6002b;
+  font-size: 32px;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.card-cotizacion h3 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.card-cotizacion p {
+  font-size: 17px;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .cotizacion-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card-cotizacion {
+    width: 100%;   /* Ocupa todo el ancho */
+    max-width: 500px; /* Para que no se vea demasiado estirada en tablets */
+  }
+}
+
+/*Card Promociones motos*/
+
+.promocion-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.5s ease, box-shadow 0.3s ease;
+  max-width: 100%;
+  margin: auto;
+  cursor: pointer;
+  height: 100%;              
+  display: flex;
+  flex-direction: column;     
+}
+
+/* Efecto hover */
+.promocion-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Imagen con fondo rojo */
+.promocion-card-image {
+  background: #e20612; 
+  text-align: center;
+  padding: 0px;
+  overflow: hidden;
+}
+
+.promocion-card-image img {
+  max-width: 100%;
+  /* height: auto; */
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  display: block;
+}
+
+.promocion-card:hover .promocion-card-image img {
+  transform: scale(1.1);
+}
+
+/* Contenido */
+.promocion-card-body {
+  padding: 32px 20px 20px 20px;
+  text-align: left;
+  flex: 1;                   
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+ 
+}
+
+.promocion-card-subtitle {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #e60000;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.promocion-card-title {
+  font-size: 1.1rem;
+ font-weight: 600;
+  margin-bottom: 16px;
+  color: #1a1a1a;
+}
+
+/* Botón */
+.promocion-card-button {
+  width: 100%;
+  padding: 12px;
+  background: #e60000;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.5s ease;
+}
+
+.promocion-card-button:hover {
+  background: #cc0000;
+}
+
+
+/* Estilos para imagen de cuando presiones el click*/
+
+/* Fondo oscuro */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  overflow: hidden;
+}
+
+/* Contenedor general del modal */
+.modal-content {
+  position: relative;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Contenedor de la imagen con botón */
+.image-wrapper {
+  position: relative;
+  display: inline-block; /* se ajusta al tamaño real de la imagen */
+}
+
+/* Imagen dentro del modal */
+.image-wrapper img {
+  max-width: 80vw;   
+  max-height: 80vh; 
+  object-fit: contain;
+  border-radius: 12px;
+  display: block;
+}
+
+/* Botón cerrar dentro de la imagen */
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  font-size: 1.3rem;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.5s ease, color 0.5s ease;
+  font-weight: bold;
+}
+
+.modal-close:hover {
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+}
+
+/*card conocenos*/
+.card-mision {
+  max-width: 560px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #f9fafb;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  text-align: center;
+  transition: all .5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s ease;
+}
+.card-mision:hover{
+  transform: scale(1.05);
+}
+
+.mision-icono {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #d90429; /* rojo */
+  border-radius: 50%;
+}
+
+.mision-icono-svg {
+  color: #fff;
+  width: 33px;
+  height: 33px;
+}
+
+.mision-titulo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #111;
+}
+
+.mision-texto {
+  font-size: 1.12rem;
+  line-height: 1.6;
+  color: #2c3e50;
+}
+/* card valores*/
+.valor-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 32px 20px;
+
+  text-align: center;
+  border: 2px solid #ececec;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.valor-card:hover {
+  transform: translateY(-8px);
+  border-color: #d60000 ;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+
+}
+
+/* Icono circular */
+.valor-icono {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 16px auto;
+  border-radius: 50%;
+  background-color: #f8f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  color: #d60000;
+  transition: all 0.3s ease;
+}
+
+.valor-card:hover .valor-icono {
+  background-color: #ffe6eb; /* rosado suave */
+  transform: scale(1.2);
+}
+
+/* Título */
+.valor-titulo {
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: #000;
+}
+
+/* Descripción */
+.valor-descripcion {
+  color: #6c757d;
+  font-size: 15px;
+  margin: 0;
+}

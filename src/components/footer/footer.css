@@ -1,0 +1,108 @@
+.footer {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    
+  }
+  .subtitulo--footer{
+    color: rgb(177, 175, 175) !important;
+  }
+  .contenido--footer{
+    background-color: #0a1f44 !important;
+    border: none;
+  }
+ .a-footer,.a--footer--g {
+    text-decoration: none;
+    transition: color 0.5s ease !important;
+  }
+  .a--footer--g{
+    color: rgb(131, 129, 129);
+  
+    font-size: 13px;
+  }
+
+  .a--footer--g:hover {
+    color: #d80027 !important;
+    cursor: pointer !important;
+  }
+  .a-footer:hover {
+    color: #d80027 !important;
+    cursor: pointer !important;
+  }
+  
+  .footer .social-icon-instagram {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #6b7280;
+    color: #fff;
+    font-size: 1.4rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  
+  .footer .social-icon-instagram:hover {
+    background: #d80027;
+    transform: scale(1.1);
+    color: #fff;
+  }
+  .footer .social-icon-whatsapp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #6b7280;
+    color: #fff;
+    font-size: 1.4rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  
+  .footer .social-icon-whatsapp:hover {
+    background: #25D366;
+    transform: scale(1.1);
+    color: #fff;
+  }
+  .footer-contact li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .footer .list-unstyled li {
+    margin-bottom: 8px; /* ajusta el valor según lo que necesites */
+  }
+  
+  .footer .list-unstyled li:last-child {
+    margin-bottom: 0; /* quita espacio al último */
+  }
+
+  .texto--footer--menu{
+    font-size: 20px;
+    font-weight: lighter  !important;
+    font-family: Good Timing, serif;
+
+  }
+
+  .footer {
+    overflow-x: hidden;
+  }
+
+  @media (max-width: 820px) {
+    .footer .container {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+
+  .footer .social-icon-instagram,
+.footer .social-icon-whatsapp {
+  flex-shrink: 0;
+}
+
+.contenido--footer--g{
+  margin-bottom: 50px !important;
+  background: #0a1f44;
+}

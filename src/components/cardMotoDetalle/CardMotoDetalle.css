@@ -1,0 +1,174 @@
+.motoObjeto-detalle {
+    padding: 20px;
+    border-radius: 12px;
+    background: #fff;
+    color: #222;
+    font-family: "Arial", sans-serif;
+    max-width: 100%;
+    margin: auto;
+  }
+  
+  .motoObjeto-nombre {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 25px;
+
+  }
+  
+  .motoObjeto-subtitulo {
+    color: #d32f2f;
+    font-weight: 600;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+
+  }
+  
+  .motoObjeto-descripcion {
+    color: #555;
+    margin-bottom: 25px;
+    font-size: 20px;
+  }
+  
+  .motoObjeto-precio {
+    background: #d32f2f;
+    color: white;
+    padding: 16px;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .motoObjeto-precio h3 {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .motoObjeto-precio p {
+    font-size: 15px;
+    margin: 5px 0 0;
+    opacity: 90%;
+  }
+  
+  .motoObjeto-botones {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+    flex-direction: row; /* por defecto horizontal */
+  }
+  
+  @media (max-width: 576px) { /* móviles */
+    .motoObjeto-botones {
+      flex-direction: column; /* en móvil vertical */
+    }
+  
+    .motoObjeto-botones .btn {
+      width: 100%; /* que ocupen todo el ancho */
+    }
+  }
+  
+   .btn-rojo--coti, .btn-rojo--contac {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 2px solid transparent;
+  } 
+  
+  .btn-rojo--coti{
+    background: #d32f2f;
+    color: white;
+    transition: all 0.5s ease;
+  }
+  
+  .btn-rojo--contac {
+    background: white;
+    border: 2px solid #d32f2f;
+    color: #d32f2f;
+    transition: all 0.5s ease;
+  }
+  .btn-rojo--contac:hover{
+    background:#d32f2f; 
+    color: #fff;
+    transform: translateY(-2px);
+  }
+  .btn-rojo--coti:hover{
+    background:#a73b3b; 
+    color: #fff;
+    transform: translateY(-2px);
+  }
+  .motoObjeto-colores h5 {
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-size: 15px;
+  }
+  .motoObjeto-colores{
+    padding-top: 18px;
+  }
+  
+  .colores-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* siempre 2 columnas */
+    gap: 12px;
+  }
+  @media (max-width: 500px) {
+    .colores-grid {
+      grid-template-columns: 1fr; /* solo una columna en móvil */
+    }
+  }
+  .color-btn {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start;
+    gap: 1px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+  }
+  
+  .color-btn:hover {
+    border-color: #aaa;
+  }
+  
+  .color-btn.activo {
+    border-color: #d32f2f;
+    background: #fde7e7;
+  }
+  
+  .color-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .color-circle {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid #333;
+    flex-shrink: 0;
+  }
+  
+  .color-nombre {
+    font-weight: 700;
+    font-size: 12px;
+  }
+  
+  .color-extra {
+    font-size: 12px;
+    color: #d32f2f;
+    font-weight: bold;
+  }
+  
+  .nombre--color{
+    display: flex;
+    justify-content: baseline;
+  }
+
+
+  

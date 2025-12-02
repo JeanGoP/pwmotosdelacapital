@@ -1,0 +1,61 @@
+.promocion-container {
+    position: relative;
+    height: 60vh;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .promocion-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); 
+    z-index: 1;
+  }
+  
+  /* Título */
+  .promocion-overlay {
+    position: relative;
+    z-index: 2; 
+    text-align: center;
+    color: white;
+  }
+  
+  .promocion-overlay p {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.6);
+  }
+  .contenido-promocion-2{
+    margin-bottom: 50px;
+    border-radius:17px;
+  }
+
+  .btn-contacto-promocion{
+    background: #000000;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 3px 9px;
+    min-width: 22%;
+    min-height: 37px;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all 0.5s ease;
+  }
+
+  .btn-contacto-promocion:hover{
+    background: #d80027;
+    color: white;
+    border: none;
+    transform: scale(1.05);
+
+  }

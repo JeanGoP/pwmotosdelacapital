@@ -1,0 +1,93 @@
+.tratamiento-container {
+    position: relative;
+    height: 60vh;
+    width: 100%;
+    background: #f4f5f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  .tituloTrataminentoDatos{
+    position: relative;
+
+    width: 100%;
+    background: #f4f5f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  
+  /* Título */
+  .tratamiento-overlay {
+    position: relative;
+    z-index: 2; 
+    text-align: center;
+    padding-left: 180px;
+    padding-right: 180px;
+    padding-top: 100px;
+    color: rgb(0, 0, 0);
+    font-size: clamp(1.8rem, 3.5vw, 7rem);
+  }
+
+  
+.capitulo{
+
+    color: #d80027;
+    font-size: clamp(1.3rem, 2vw, 2rem);
+}
+
+
+@media (max-width: 768px) {
+    .tratamiento-overlay {
+        padding-top: 100px;
+        padding-left: 50px;
+        padding-right: 50px;
+
+      }
+}
+@media (max-width: 1000px) {
+    .tratamiento-overlay {
+        padding-top: 100px;
+        padding-left: 50px;
+        padding-right: 50px;
+
+      }
+}
+
+.botones-capitulos {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+  
+  .boton-capitulo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #d80027;
+    background: white;
+    color: #d80027;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .boton-capitulo:hover {
+    background: #f8d7da;
+  }
+  
+  .boton-capitulo.activo {
+    background: #d80027;
+    color: white;
+  }
+  
+  .contenido--card--tratamiento{
+    display: flex;
+    justify-content: center;   
+    margin-bottom: 25px;
+  }
