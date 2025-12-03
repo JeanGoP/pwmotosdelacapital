@@ -1,10 +1,16 @@
 .carousel-image {
-    object-fit: cover; /* muestra la imagen completa */
-    height: 80vh;
-    background-color: black; /* color de fondo si hay bordes */
+    object-fit: contain; 
+    height: 65vh;
+    background-color: white; 
     width: 100%;
+
   }
-  
+  @media (max-width: 576px) {
+    .carousel-image {
+      object-fit: cover;   /* Se ajusta mejor al contenedor */
+      height: 40vh;        /* Más pequeño para móviles */
+    }
+  }
   .carousel-indicators [data-bs-target] {
     background-color: #fff; /* color de los puntos */
     width: 21px;

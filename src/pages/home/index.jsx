@@ -299,12 +299,14 @@ export function Home() {
 
         window.open(url, "_blank");
     };
+    let imageTemp = ["/images/FondoMotosCapital.png"]
     return (
 
         <div>
             {/* Menu de inicio */}
             <div id="inicio" className='contenedor-carousel'>
-                <CarouselHero img={configuracionData?.rutaImgCarrousel || ''} />
+                {/* <CarouselHero img={configuracionData?.rutaImgCarrousel || ''} /> */}
+                <CarouselHero img={imageTemp} />
             </div>
             <div className='home--contenido--1'>
                 <div
