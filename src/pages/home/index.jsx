@@ -152,7 +152,7 @@ export function Home() {
         {
             icono: '/images/Escobarduque.png',
             titulo: 'Escobar y Duque',
-            detalle: 'Seguros confiables con amplia cobertura, servicio personalizado y experiencia en el sector.',
+            detalle: 'Protección integral para tu moto',
             servicio: [],
             btn: ''
         },
@@ -160,7 +160,7 @@ export function Home() {
         {
             icono: '/images/garantimotos.png',
             titulo: 'Garantimotos',
-            detalle: 'Protección especializada para motocicletas con respaldo nacional.',
+            detalle: 'Seguros especializados en motocicletas',
             servicio: [],
             btn: ''
         }]
