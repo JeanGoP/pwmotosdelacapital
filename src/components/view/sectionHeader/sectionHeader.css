@@ -1,54 +1,79 @@
 .section-header {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 15px;
-  }
-  
-  .section-title {
-    /* font-size: clamp(1.7rem, 4vw, 2.7rem); */
-    font-weight: 700;
-    margin-bottom: 0.5rem;
- color: #0a1f44;
- font-family: Good Timing, serif;
-  }
-  .section-title_t {
-    /* font-size: clamp(1.7rem, 4vw, 2.7rem); */
-    font-weight: 800;
-    margin-bottom: 0.5rem;
- color: black;
- 
-  }
-  .section-subtitle {
-    /* font-size: clamp(1.3rem, 2vw, 1.27rem); */
-    color: #4a5568;
-    line-height: 1.6;
-    
-  }
-  
-  .section-title_D {
-    /* font-size: clamp(1.7rem, 4vw, 2.7rem); */
-    font-weight: 700;
-    margin-bottom: 0.5rem;
- color: rgb(255, 255, 255);
- font-family: Good Timing, serif;
-  }
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
 
-  .section-subtitle_D {
-    /* font-size: clamp(1.3rem, 2vw, 1.27rem); */
-    color: #dadada;
-    line-height: 1.6;
-  }
+.section-title {
 
-  .section-title_E {
-    /* font-size: clamp(1.7rem, 4vw, 2.7rem); */
-    font-weight: 700;
-    margin-bottom: 0.5rem;
- color: rgb(255, 255, 255);
- font-family: Good Timing, serif;
-  }
 
-  .section-subtitle_E {
-    /* font-size: clamp(1.3rem, 2vw, 1.27rem); */
-    color: #dadada;
-    line-height: 1.6;
-  }
+  margin-bottom: 0.5rem;
+  color: #0a1f44;
+  font-family: Good Timing, Montserrat, sans-serif;
+}
+
+.section-titleAL {
+
+
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+  font-family: Good Timing, Montserrat, sans-serif;
+}
+
+.section-title_t {
+
+  font-family: Good Timing, Montserrat, sans-serif;
+  margin-bottom: 0.5rem;
+  color: rgb(255, 255, 255);
+
+}
+
+.section-subtitle_t {
+  font-family: Good Timing, Montserrat, sans-serif;
+  color: #b5bbc4;
+  line-height: 1.6;
+
+}
+
+.section-subtitle {
+
+  color: #4a5568;
+  line-height: 1.6;
+
+}
+
+.section-subtitleAL {
+  /* font-size: clamp(1.3rem, 2vw, 1.27rem); */
+  color: #ffffff;
+  line-height: 1.6;
+  font-family: Good Timing, Montserrat, sans-serif;
+}
+
+.section-title_D {
+  /* font-size: clamp(1.7rem, 4vw, 2.7rem); */
+
+  margin-bottom: 0.5rem;
+  color: rgb(211, 211, 211);
+  font-family: Good Timing, Montserrat, sans-serif;
+}
+
+.section-subtitle_D {
+  /* font-size: clamp(1.3rem, 2vw, 1.27rem); */
+  color: #dadada;
+  line-height: 1.6;
+  font-family: Good Timing, Montserrat, sans-serif;
+}
+
+.section-title_E {
+  /* font-size: clamp(1.7rem, 4vw, 2.7rem); */
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: rgb(255, 255, 255);
+  font-family: Good Timing, serif;
+}
+
+.section-subtitle_E {
+  /* font-size: clamp(1.3rem, 2vw, 1.27rem); */
+  color: #dadada;
+  line-height: 1.6;
+}

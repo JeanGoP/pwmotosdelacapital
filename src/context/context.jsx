@@ -13,7 +13,10 @@ export const LanguageProvider = ({ children }) => {
   const [marcaFiltro, setMarcaFiltro] = useState('');
   const [desplazamiento, setDesplazamiento] = useState('');
   const [marcasUnicas, setMarcasUnicas] = useState([]);
+  const [marcasProductos, SetmarcasProductos] = useState([]);
+
   const NIT = import.meta.env.VITE_API_NIT_EMPRESA;
+
   const getSegmentos = async () => {
     const data = {
       tipo: 'segmentos',
@@ -32,7 +35,24 @@ export const LanguageProvider = ({ children }) => {
       console.error('Error al obtener productos:', error.message);
     }
   };
-
+  const getMarcasProductos = async () => {
+    const data = {
+      tipo: 'marcas',
+      nit: NIT,
+    };
+    try {
+      const response = await ObtenerProductos(data);
+      if (!response.Error) {
+        const apiData = decodeUnicodeDeep(JSON.parse(response.Resultado).content)
+        //setSegmentos(JSON.parse(response.Resultado).content);
+       // console.log(apiData)
+       SetmarcasProductos(apiData)
+      }
+    } catch (error) {
+      console.log(error);
+      console.error('Error al obtener productos:', error.message);
+    }
+  };
   const getProductos = async () => {
     const data = {
       tipo: 'productos',
@@ -96,6 +116,7 @@ export const LanguageProvider = ({ children }) => {
     getEmpresa();
     getProductos();
     getSegmentos();
+    getMarcasProductos();
   }, []);
 
   return (
@@ -116,7 +137,9 @@ export const LanguageProvider = ({ children }) => {
         desplazamiento,
         setDesplazamiento,
         getProductos,
-        getSegmentos
+        getSegmentos,
+        getMarcasProductos,
+        marcasProductos
       }}
     >
       {children}

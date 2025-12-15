@@ -4,18 +4,19 @@
   }
   
   .section-title-Lite {
-    font-size: clamp(1.7rem, 4vw, 2.2rem);
-    margin-bottom: 0.5rem;
-    color: #0a1f44;
-    font-weight: 700;
-    font-family: Good Timing, serif;
+    font-size: clamp(1.2rem, 3vw, 1.2rem);
+    margin-bottom: 1rem;
+    color: #000000;
+
+    font-family: Good Timing, Montserrat, sans-serif;
   }
   
   .section-subtitle-Lite {
-    font-size: clamp(1.3rem, 2vw, 1.4rem);
-    color: #4a5568;
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    color: #747b86;
     line-height: 1.6;
     margin-bottom: 50px;
+    font-family: Good Timing, Montserrat, sans-serif;
   }
   .btn-contactar-ahora {
     margin-top: 20px;

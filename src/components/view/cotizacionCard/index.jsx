@@ -10,63 +10,79 @@ import { LanguageContext } from '../../../context/context'
 import { useState, useEffect, useContext } from "react";
 import CustomSelect from '../../customSelect'
 import "./cotizacionCard.css";
+import SectionHeaderCotizacion from "../sectionHeadercotizacion";
 
 export function CotizacionCard() {
-  const { productos, getProductos } = useContext(LanguageContext);
+  const { productos, getProductos, marcasProductos, getMarcasProductos } = useContext(LanguageContext);
   const [selectedProducto, setSelectedProducto] = useState("");
   useEffect(() => {
-    getProductos();
+    getMarcasProductos();
 
   }, []);
 
-  const productosLimpios = [...new Set(productos.map(p => p.producto_nombre))];
+  const MarcasProductosLimpios = [
 
+    ...new Set(
+      marcasProductos
+        .filter(m => m.marca_nombre)
+        .map(m => m.marca_nombre)
+    )
+  ].reverse();
+
+  const ciudades = ['Bogotá', 'Medellín', 'Cali', 'Barranquilla', 'Cartagena', 'Bucaramanga', 'Pereira', 'Manizales', 'Ibagué', 'Cúcuta', 'Pasto', 'Santa Marta', 'Villavicencio', 'Popayán', 'Otra']
   return (
     <div className="cotizacion-card">
-      <form className="cotizacion-form">
+      <div className="cotizacion-form">
+        <SectionHeaderCotizacion titulo="Solicita tu cotización" cuerpo="Completa todos los campos y nos pondremos en contacto contigo para ofrecerte las mejores opciones de financiación y beneficios." />
         <div className="cotizacion-row">
           <div className="cotizacion-group">
-            <label><LuUser className="inconoUser" /> Nombre *</label>
-            <input type="text" placeholder="Ingresa tu nombre" />
+            <label> Nombre *</label>
+            <input type="text" placeholder="Tu nombre" />
           </div>
           <div className="cotizacion-group">
-            <label><LuUser className="inconoUser" /> Apellido *</label>
-            <input type="text" placeholder="Ingresa tu apellido" />
+            <label> Apellido *</label>
+            <input type="text" placeholder="Tu apellido" />
           </div>
         </div>
 
-        <div className="cotizacion-row">
-          <div className="cotizacion-group">
-            <label><PiIdentificationCard className="inconoUser" /> Número de Identificación *</label>
-            <input type="text" placeholder="CC, TI, CE, etc." />
-          </div>
-          <div className="cotizacion-group">
-            <label><LuPhone className="inconoUser" /> Número de Contacto *</label>
-            <input type="text" placeholder="Celular o teléfono fijo" />
-          </div>
+
+        <div className="cotizacion-group">
+          <label> Número de Identificación *</label>
+          <input type="text" placeholder="Cédula o documento de identidad" />
+        </div>
+
+
+        <div className="cotizacion-group">
+          <label> Número de Contacto *</label>
+          <input type="text" placeholder="300 123 4567" />
+        </div>
+        <div className="cotizacion-group">
+          <label>Ciudad / Departamento *</label>
+          <CustomSelect productosLimpios={ciudades} opcion="C" />
         </div>
 
         <div className="cotizacion-group">
-          <label><MdOutlineMail className="inconoUser" /> Correo Electrónico *</label>
-          <input type="email" placeholder="ejemplo@correo.com" />
+          <label>Correo Electrónico *</label>
+          <input type="email" placeholder="tu@email.com" />
         </div>
         <div className="cotizacion-group">
-          <label><TbBike className="inconoUser" /> Modelo de interés</label>
-          <CustomSelect productosLimpios = {productosLimpios}/>
+          <label>Marca de interés</label>
+          <CustomSelect productosLimpios={MarcasProductosLimpios} opcion="D" />
         </div>
         <div className="cotizacion-group">
-          <label><IoDocumentTextOutline className="inconoUser" /> Mensaje / Solicitud *</label>
-          <textarea placeholder="Describe tu solicitud..."></textarea>
+          <label> Mensaje de solicitud </label>
+          <textarea placeholder="Describe aquí tu solicitud, preguntas o requerimientos (plan de financiación, disponibilidad, pruebas de manejo, etc.)"></textarea>
+        </div>
+        <div className="cotizacion-group">
+
+          <textarea placeholder="Al enviar este formulario, aceptas que nos comuniquemos contigo para brindarte información sobre nuestros productos y servicios. No compartiremos tu información con terceros." readOnly></textarea>
         </div>
 
         <button type="submit" className="cotizacion-btn">
-          <LuMessageCircle className="inconoMSJ" /> ENVIAR INFORMACIÓN
+          Enviar cotización
         </button>
 
-        <p className="cotizacion-note">
-          Un asesor se pondrá en contacto contigo lo antes posible para brindarte una cotización personalizada y resolver todas tus dudas.
-        </p>
-      </form>
+      </div>
     </div>
   );
 }

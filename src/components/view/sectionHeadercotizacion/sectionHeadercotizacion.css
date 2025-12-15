@@ -1,32 +1,32 @@
 .titulo-seccion {
     text-align: center;
-    padding: 60px 20px;
+
     max-width: 800px;
     margin: 0 auto;
     
   }
   
   .titulo-seccionh2 {
-    font-size: clamp(2.8rem, 4vw, 3.2rem);
-    font-weight: 600;
-    color: #ffffff;
+    font-size: clamp(2.8rem, 4vw, 2.8rem);
+    color: #002857;
     margin-bottom: 19px;
-    font-family: Good Timing, serif;
+    font-family: Good Timing, Montserrat, sans-serif;
   }
   
   .titulo-seccion .linea {
     width: 100px;
     height: 5px;
-    background-color: #c6002b; /* Rojo Hero */
+    background-color: #c6002b; 
     margin: 0 auto 20px;
     border-radius: 2px;
     
   }
   
   .titulo-seccion p {
-    font-size: 21px;
-    color: #444;
+    font-size: 18px;
+    color: #4a5565;
     line-height: 1.6;
-    color: #cacaca;
+    font-family: Good Timing, Montserrat, sans-serif;
+  
   }
   

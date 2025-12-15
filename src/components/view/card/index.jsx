@@ -18,7 +18,7 @@ import './card.css'
 import { Settings } from "lucide-react";
 import { Package } from "lucide-react";
 
-const Cards = ({ icono = '', titulo, cuerpo, categoria = '', precio = '', listaItems = [], imagen = '', opcion, btn = '', franja = '', menu = '', motObject = null, whatsapp = '' }) => {
+const Cards = ({ icono = '', titulo, cuerpo, categoria = '', precio = '', listaItems = [], imagen = '', opcion, btn = '', franja = '', menu = '', motObject = null, whatsapp = '', cilindraje = '' }) => {
 
   const [activeMenu, setActiveMenu] = useState("inicio");
   const location = useLocation();
@@ -61,12 +61,12 @@ const Cards = ({ icono = '', titulo, cuerpo, categoria = '', precio = '', listaI
       case "user": return <LuUser />;
       case "phone": return <LuPhone />;
       case "gear": return <PiGearBold />;
-      case "shield": return <LuShield />;
+      case "shield": return <LuShield size={30} />;
       case "box": return <BsBox />;
       case "users": return <LuUsers />;
       case "info": return <Info className="card-icon-P" />;
       case "heart": return <LuHandHeart />;
-      case "confi": return <GrConfigure />;
+      case "confi": return <GrConfigure size={30} />;
       case "boardcheck": return <TbClipboardCheck />;
       case "zap": return <Zap className="mision-icono-svg" />;
       case "target": return <Target className="mision-icono-svg" />;
@@ -76,12 +76,12 @@ const Cards = ({ icono = '', titulo, cuerpo, categoria = '', precio = '', listaI
       case "Handshake": return <Handshake size={25} />;
       case "award": return <Award size={25} />;
       case "lightbulb": return <Lightbulb size={25} />;
-      case "setting": return <Settings size={40}/>;
-      case "package": return <Package size={40}/>;
+      case "setting": return <Settings size={30} />;
+      case "package": return <Package size={30} />;
       default: return null;
     }
   };
-  const palabrasRojo = ["correctivos", "garantía", "Auteco","especializado","mecánica general","seguros","accesorios","originales","financiación"]; 
+  const palabrasRojo = ["correctivos", "garantía", "Auteco", "especializado", "mecánica general", "seguros", "accesorios", "originales", "financiación"];
 
   const resaltarPalabras = (texto) => {
     if (!texto) return "";
@@ -108,16 +108,18 @@ const Cards = ({ icono = '', titulo, cuerpo, categoria = '', precio = '', listaI
     return (
       <div className="moto-card" onClick={() => handleMotocicleta(motObject)}>
         <div className="moto-card-header">
-          <img src={imagen} alt={titulo} className="moto-img" />
-          <span className="categoria">{categoria}</span>
+          <img src={imagen} alt={titulo} className="moto-img" onError={(e) => {
+            e.target.src = "/images/nophoto.jpg";
+            e.target.onerror = null; // previene loop
+          }} />
+          <span className="categoria" >{categoria}</span>
+          <span className="cilandraje--moto" >{cilindraje}</span>
         </div>
         <div className="moto-card-body">
-          <h5 className="moto-title">{titulo}</h5>
+          <p className="moto-title">{titulo}</p>
           <p className="moto-description">{cuerpo}</p>
-          <div className="precio-icono">
-            <p className="moto-precio">{precio}</p>
-            <FaArrowRight className="moto-icono-right" />
-          </div>
+          <p className="moto-precio"> {precio}</p>
+          <button className="moto-btn" onClick={() => handleMotocicleta(motObject)}>Ver detalles </button>
         </div>
       </div>
     )
@@ -174,31 +176,44 @@ const Cards = ({ icono = '', titulo, cuerpo, categoria = '', precio = '', listaI
           </div>
           <div className="card-mantenimiento-contenido">
             <h5 className="titulo-mantenimiento">{titulo}</h5>
-            <p className="descripcion-mantenimiento"  dangerouslySetInnerHTML={{ __html: resaltarPalabras(cuerpo) }}></p>
+            <p className="descripcion-mantenimiento">{cuerpo} </p>
           </div>
         </div>
       )
     }
 
   }
-  if (opcion == 'GA') {
+  if (opcion = 'EL') {
     return (
-      <div className="card-mantenimiento2  h-100">
-        <div className="icono-mantenimiento">
-        <div className="aseguradora-icono">
-          <img src={icono} alt={titulo} />
-        </div>
+      <div className="card-mantenimientoEL  h-100">
+        <div className="icono-mantenimientoEL">
+          {renderIcon()}
         </div>
         <div className="card-mantenimiento-contenido">
-          <h5 className="titulo-mantenimiento">{titulo}</h5>
-          <p className="descripcion-mantenimiento">{cuerpo}</p>
-          <div className="card-mantenimiento-destacado2">
-              <p className="texto-destacado2">✓ Convenio Especial Activo</p>
-            </div>
+          <h5 className="titulo-mantenimientoEL">{titulo}</h5>
+          <p className="descripcion-mantenimientoEL">{cuerpo} </p>
         </div>
       </div>
     )
   }
+  // if (opcion == 'GA') {
+  //   return (
+  //     <div className="card-mantenimiento2  h-100">
+  //       <div className="icono-mantenimiento2">
+  //       <div className="aseguradora-icono">
+  //         <img src={icono} alt={titulo} />
+  //       </div>
+  //       </div>
+  //       <div className="card-mantenimiento-contenido">
+  //         <h5 className="titulo-mantenimiento2">{titulo}</h5>
+  //         <p className="descripcion-mantenimiento2">{cuerpo}</p>
+  //         <div className="card-mantenimiento-destacado2">
+  //             <p className="texto-destacado2"><LuShield  size={30}/> Cobertura completa</p>
+  //           </div>
+  //       </div>
+  //     </div>
+  //   )
+  // }
 
   if (opcion == 'ST') {
     return (
@@ -215,74 +230,74 @@ const Cards = ({ icono = '', titulo, cuerpo, categoria = '', precio = '', listaI
     )
   }
 
-  if (opcion == 'A') {
-    return (
-      <div className="custom-card-aliado h-100">
-        <div className="card-logo-aliado">
-          <img src={imagen} alt={titulo} />
-        </div>
-        <h3 className="card-title-aliado">{titulo}</h3>
-        <p className="card-description-aliado">{cuerpo}</p>
-      </div>
-    )
-  }
+  // if (opcion == 'A') {
+  //   return (
+  //     <div className="custom-card-aliado h-100">
+  //       <div className="card-logo-aliado">
+  //         <img src={imagen} alt={titulo} />
+  //       </div>
+  //       <h3 className="card-title-aliado">{titulo}</h3>
+  //       <p className="card-description-aliado">{cuerpo}</p>
+  //     </div>
+  //   )
+  // }
 
-  if (opcion == 'CO') {
-    return (
-      <div className="card-cotizacion">
-        <div className="icon-wrapper">
-          {renderIcon()}
-        </div>
-        <h3>{titulo}</h3>
-        <p>{cuerpo}</p>
-      </div>
-    )
-  }
+  // if (opcion == 'CO') {
+  //   return (
+  //     <div className="card-cotizacion">
+  //       <div className="icon-wrapper">
+  //         {renderIcon()}
+  //       </div>
+  //       <h3>{titulo}</h3>
+  //       <p>{cuerpo}</p>
+  //     </div>
+  //   )
+  // }
 
-  if (opcion == 'MP') {
-    const [showModal, setShowModal] = useState(false);
-    useEffect(() => {
-      if (showModal) {
-        document.body.style.overflow = "hidden";
-      } else {
-        document.body.style.overflow = "auto";
-      }
-    }, [showModal]);
-    return (
-      <>
+  // if (opcion == 'MP') {
+  //   const [showModal, setShowModal] = useState(false);
+  //   useEffect(() => {
+  //     if (showModal) {
+  //       document.body.style.overflow = "hidden";
+  //     } else {
+  //       document.body.style.overflow = "auto";
+  //     }
+  //   }, [showModal]);
+  //   return (
+  //     <>
 
-        <div className="promocion-card">
-          <div className="promocion-card-image" onClick={() => setShowModal(true)}>
-            <img src={imagen} alt={titulo} />
-          </div>
-          <div className="promocion-card-body">
-            <span className="promocion-card-subtitle">{titulo}</span>
-            <h3 className="promocion-card-title">{cuerpo}</h3>
-            <button className="promocion-card-button" onClick={handleClickWhatsapp}>
-              <LuMessageCircle size={18} />
-              <span>Solicitar Cotización</span>
-            </button>
-          </div>
-        </div>
+  //       <div className="promocion-card">
+  //         <div className="promocion-card-image" onClick={() => setShowModal(true)}>
+  //           <img src={imagen} alt={titulo} />
+  //         </div>
+  //         <div className="promocion-card-body">
+  //           <span className="promocion-card-subtitle">{titulo}</span>
+  //           <h3 className="promocion-card-title">{cuerpo}</h3>
+  //           <button className="promocion-card-button" onClick={handleClickWhatsapp}>
+  //             <LuMessageCircle size={18} />
+  //             <span>Solicitar Cotización</span>
+  //           </button>
+  //         </div>
+  //       </div>
 
 
-        {showModal && (
+  //       {showModal && (
 
-          <div className="modal-overlay" onClick={() => setShowModal(false)}>
-            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-              <div className="image-wrapper">
-                <img src={imagen} alt={titulo} />
-                <button className="modal-close" onClick={() => setShowModal(false)}>
-                  ✕
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
-      </>
-    )
+  //         <div className="modal-overlay" onClick={() => setShowModal(false)}>
+  //           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+  //             <div className="image-wrapper">
+  //               <img src={imagen} alt={titulo} />
+  //               <button className="modal-close" onClick={() => setShowModal(false)}>
+  //                 ✕
+  //               </button>
+  //             </div>
+  //           </div>
+  //         </div>
+  //       )}
+  //     </>
+  //   )
 
-  }
+  // }
   if (opcion == 'MI') {
     return (
       <div className="card-mision">
@@ -308,6 +323,8 @@ const Cards = ({ icono = '', titulo, cuerpo, categoria = '', precio = '', listaI
       </div>
     );
   }
+
+ 
 }
 
 export default Cards; 

@@ -1,0 +1,36 @@
+.card-producto {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+    border: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .card-producto:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  .card-producto-img {
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 12px auto;
+  }
+  
+  .card-producto-titulo {
+    font-size: 18px;
+   
+    color: #333;
+    margin: 0;
+    font-family: Good Timing, Montserrat, sans-serif;
+  }
+  .card-producto-posventa{
+    background: #f9fafb;
+    padding: 15px;
+    border-radius: 16px;
+  }

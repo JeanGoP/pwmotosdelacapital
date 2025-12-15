@@ -1,85 +1,92 @@
-.row__Posventa__ {
-  margin-top: 56px;
-}
-.contenido__posventa {
-  padding-top: 56px;
-  padding-bottom: 50px;
-}
-.container__row__Posventa {
-  /* background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images/HomePulsar.PNG'); */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  max-height: 200px;
-  min-height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+.posventaMoto-container {
+  position: relative;
+  height: 65vh; 
   width: 100%;
-  overflow: hidden;
-  color: white;
-}
-.label__row__Posventa {
-  display: block;
-  font-size: clamp(28px, 9vw, 40px);
-  font-weight: 100;
-  align-items: center;
+  display: flex;
   justify-content: center;
-  text-align: center;
-  font-family: 'Bebas Neue', Sans-serif;
+  align-items: center;
+  overflow: hidden;
+  object-fit: contain; 
+
+}
+.posventa-form-container {
+  background: #f9f9fb;
+  padding: 32px;
+  border-radius: 16px;
+  max-width: 700px;
+  margin: auto;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
 }
 
-.titulo__Posventa {
-  /* color: white; */
-  font-size: 35px !important;
-  font-weight: bold;
-  font-family: 'Bebas Neue', Sans-serif;
-  text-align: center;
-}
-.descripcion__Posventa {
-  font-size: 20px;
-  /* color: #afb0b3; */
-  text-align: justify;
-}
-.titulo__card__Posventa {
-  color: rgb(0, 0, 0);
-  font-size: 35px !important;
-  font-weight: bold;
-  text-align: center;
-  font-family: 'Bebas Neue', Sans-serif;
+
+.posventa-form-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 16px;
 }
 
-.contenido__card__Posventa {
-  padding: 20px;
+.posventa-input {
+  width: 100%;
+  padding: 14px 16px;
+  background: #f3f3f6;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  font-size: 15px;
+  color: #333;
+  outline: none;
+  transition: border 0.2s;
 }
-.input__card__Posventa {
-  height: 40px;
-  font-size: medium;
-  padding: 15px;
+
+.posventa-input:focus {
+  border-color: #d60000;
+}
+
+
+.posventa-input select {
+  appearance: none;
+}
+
+.posventa-textarea {
+  width: 100%;
+  padding: 14px 16px;
+  background: #f3f3f6;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  font-size: 15px;
+  color: #333;
+  outline: none;
+  transition: border 0.2s;
   margin-bottom: 20px;
 }
-.card__Posventa {
-  border-radius: 15px;
-  background-color: #c7c2c5;
+
+.posventa-textarea:focus {
+  border-color: #d60000;
 }
-.subtitulo__card__Posventa {
-  text-align: center;
-  font-size: large;
-}
-.btn__card__Posventa {
-  height: 50px;
-  width: 100px;
-  font-size: larger;
-  background-color: #d63201;
+
+
+.posventa-btn {
+  width: 100%;
+  background-color: #d60000;
+  color: #fff;
   border: none;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 17px;
+  cursor: pointer;
+  transition: background 0.3s;
+  border: 1px solid  #d60000;
+
 }
-.btn__card__Posventa:hover {
-  background-color: #d0694a;
+
+.posventa-btn:hover {
+  background-color: #b20000;
 }
-.contenido__btn__card__Posventa {
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding-top: 10px;
-  padding-bottom: 25px;
+
+
+@media (max-width: 600px) {
+  .posventa-form-row {
+    flex-direction: column;
+  }
 }
+

@@ -14,6 +14,8 @@ import BotonFlotante from '../components/botonFlotante';
 import { Motocicleta } from '../pages/motocicleta';
 import ProtectedRoute from '../context/protectedRoute';
 import {TratamientosDatos}from '../pages/tratamientosDatos'
+import { Posventa } from '../pages/posventa';
+import { Modelos } from '../pages/modelos';
 
 function AppRoutesWrapper() {
   const location = useLocation();
@@ -35,6 +37,8 @@ function AppRoutesWrapper() {
         <Route path="/conocenos" element={<Conocenos />} />
         <Route path="/motocicleta" element={<Motocicleta />} />
         <Route path="/tratamientosDatos" element={<TratamientosDatos />} />
+        <Route path="/modelos" element={<Modelos />} />
+        <Route path="/posventa" element={<Posventa />} />
         <Route path="*" element={<RedirectToHome />} />
 
         <Route

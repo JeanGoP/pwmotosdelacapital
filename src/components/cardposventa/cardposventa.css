@@ -1,0 +1,77 @@
+.card-posventa {
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 32px;
+    border: 2px solid #f0eeee;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    text-align: center; 
+  }
+  
+  .card-posventa:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border-color:#f0eeee;
+  }
+
+  .icono-posventa {
+    width: 50px;
+    height: 50px;
+    border-radius: 15%;
+    background-color: #d60000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    margin: 0; 
+  }
+
+  
+  .titulo-posventa {
+    margin: 0;
+    font-size: 20px;
+    color: #000;
+  }
+  
+  .descripcion-posventa {
+    color: #6c757d;
+    font-size: 17px;
+    margin-bottom: 16px;
+    padding-left: 25px;  
+    text-align: left;    
+    
+  }
+  
+  .lista-posventa {
+    list-style: none;
+    text-align: left; 
+    display: block;  
+   
+    
+  }
+  
+  .lista-posventa li {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    font-size: 17px; 
+    color: #50565c;
+  }
+  
+  .lista-posventa li::before {
+    content: "•";
+    color: #50565c;
+    margin-right: 10px;
+    font-size: 30px; 
+    line-height: 1;
+  }
+  
+  .header-posventa {
+    display: flex;
+    gap: 12px;                 
+    margin-bottom: 12px;
+    text-align: center;
+  }

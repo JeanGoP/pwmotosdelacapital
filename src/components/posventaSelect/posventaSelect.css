@@ -1,0 +1,57 @@
+.posventa-select-wrapper {
+    position: relative;
+    width: 100%;
+  }
+  
+  /* Caja principal */
+  .posventa-select-display {
+    background: #f3f3f6;
+    padding: 14px 16px;
+    border-radius: 10px;
+    border: 1px solid #eee;
+    font-size: 15px;
+    cursor: pointer;
+    transition: border 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+
+  
+  /* Flecha */
+  .posventa-arrow {
+    transition: transform 0.25s ease;
+    font-size: 14px;
+    opacity: 0.6;
+  }
+  
+  .posventa-arrow.rotate {
+    transform: rotate(180deg);
+  }
+  
+
+  .posventa-select-options {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    width: 100%;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.18);
+    overflow: hidden;
+    z-index: 999;
+  }
+  
+  .posventa-select-options li {
+    padding: 12px 16px;
+    font-size: 15px;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .posventa-select-options li.selected {
+    color: #b30000; 
+    font-weight: 600;
+  }
+  

@@ -1,21 +1,15 @@
-/* Contenedor principal con imagen de fondo */
+
 .cotizacion-container {
     position: relative;
-    height: 60vh; /* 🔹 altura más baja (ajústala: 40vh, 60vh, etc.) */
+    height: 60vh;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
   }
-  .cotizacion-container::before {
-    content: "";
-    position: absolute;
-    inset: 0; /* cubre todo el contenedor */
-    background: rgba(0, 0, 0, 0.5); /* 🔹 cambia el 0.4 para más o menos oscuridad */
-    z-index: 1;
-  }
-  /* Botón circular arriba a la izquierda */
+
+
   .back-button {
     position: absolute;
     top: 100px;
@@ -35,16 +29,16 @@
     transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
   
-  /* Efecto hover */
+
   .back-button:hover {
     transform: scale(1.15);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
   }
   
-  /* Título */
+
   .cotizacion-overlay {
     position: relative;
-    z-index: 10; /* 🔹 para que esté sobre el fondo */
+    z-index: 10;
     text-align: center;
 
     color: white;

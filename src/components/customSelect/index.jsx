@@ -1,9 +1,10 @@
 import { useState, useRef } from "react";
+import {  useEffect } from "react";
 import { TbBike } from "react-icons/tb";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaAngleUp,FaAngleDown } from "react-icons/fa";
 
-export default function CustomSelect({ productosLimpios }) {
+export default function CustomSelect({ productosLimpios, opcion='A', onChange, value   }) {
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState("");
   const [offset, setOffset] = useState(0);
@@ -15,11 +16,59 @@ export default function CustomSelect({ productosLimpios }) {
   const maxOffsetPx = Math.max(0, productosLimpios.length * itemHeight - listHeight);
   const intervalRef = useRef(null);
   const speedRef = useRef(2); // velocidad inicial en px
+  let frase =''; 
 
+  if(opcion === 'A'){
+    frase = 'Selecciona el modelo que te interesa';
+  }else if(opcion === 'C'){
+    frase = 'Selecciona tu ciudad';
+  }else if(opcion === 'D'){
+    frase = 'Selecciona una marca';
+  }else{
+     frase = 'Selecciona la marca que te interesa';
+  }
+
+  useEffect(() => {
+    if (value) setSelected(value);
+    if (value === "TODOS") setSelected("TODOS");
+  }, [value]);
+  
+  // const startScroll = (direction) => {
+  //   stopScroll(); // limpiar si ya hay uno
+  //   speedRef.current = 2; // reiniciar velocidad
+  //   intervalRef.current = setInterval(() => {
+  //     setOffset((prev) => {
+  //       if (direction === "up") {
+  //         return Math.max(0, prev - speedRef.current);
+  //       } else {
+  //         return Math.min(maxOffsetPx, prev + speedRef.current);
+  //       }
+  //     });
+  //   }, 20);
+
+  //   // cada 500ms, aumenta la velocidad un poco
+  //   const accelerate = setInterval(() => {
+  //     speedRef.current = Math.min(speedRef.current + 1, 20); // limite máximo 20px
+  //   }, 500);
+
+  //   // guardamos ambos para limpiarlos después
+  //   intervalRef.current.accelerate = accelerate;
+  // };
+
+  // const stopScroll = () => {
+  //   if (intervalRef.current) {
+  //     clearInterval(intervalRef.current);
+  //     if (intervalRef.current.accelerate) {
+  //       clearInterval(intervalRef.current.accelerate);
+  //     }
+  //     intervalRef.current = null;
+  //   }
+  // };
   const startScroll = (direction) => {
-    stopScroll(); // limpiar si ya hay uno
-    speedRef.current = 2; // reiniciar velocidad
-    intervalRef.current = setInterval(() => {
+    stopScroll(); 
+    speedRef.current = 2;
+  
+    const scrollInterval = setInterval(() => {
       setOffset((prev) => {
         if (direction === "up") {
           return Math.max(0, prev - speedRef.current);
@@ -28,28 +77,29 @@ export default function CustomSelect({ productosLimpios }) {
         }
       });
     }, 20);
-
-    // cada 500ms, aumenta la velocidad un poco
-    const accelerate = setInterval(() => {
-      speedRef.current = Math.min(speedRef.current + 1, 20); // limite máximo 20px
+  
+    const accelerateInterval = setInterval(() => {
+      speedRef.current = Math.min(speedRef.current + 1, 20);
     }, 500);
-
-    // guardamos ambos para limpiarlos después
-    intervalRef.current.accelerate = accelerate;
+  
+    // Guardamos ambos intervalos en un objeto
+    intervalRef.current = {
+      scroll: scrollInterval,
+      accelerate: accelerateInterval
+    };
   };
-
+  
   const stopScroll = () => {
     if (intervalRef.current) {
-      clearInterval(intervalRef.current);
-      if (intervalRef.current.accelerate) {
-        clearInterval(intervalRef.current.accelerate);
-      }
+      clearInterval(intervalRef.current.scroll);
+      clearInterval(intervalRef.current.accelerate);
       intervalRef.current = null;
     }
   };
-
+  
   const handleSelect = (nombre) => {
     setSelected(nombre);
+    onChange && onChange(nombre);
     setOpen(false);
     setOffset(0);
   };
@@ -63,7 +113,7 @@ export default function CustomSelect({ productosLimpios }) {
           type="button"
           onClick={() => setOpen(!open)}
         >
-          {selected || "Selecciona el modelo que te interesa"}
+          {selected || frase}
         </button>
 
         <AnimatePresence>

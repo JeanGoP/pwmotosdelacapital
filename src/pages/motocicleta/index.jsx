@@ -33,7 +33,7 @@ export function Motocicleta() {
         return [];
     });
 
-    const getFichaPorNombres = (fichaTecnica, nombres) => {
+    const getFichaPorNombres = (fichaTecnica=[], nombres=[]) => {
         return fichaTecnica
             .filter(item => nombres.includes(item.ficha_tecnica_name))
             .map(item => ({
@@ -63,10 +63,10 @@ export function Motocicleta() {
         const encontrado = nombres_ficha.find(n => n.nombre === nombre);
         return encontrado ? encontrado.nombre_reemplazo : nombre;
     };
-    const ficha_tecnica_cilindraje = getFichaPorNombres(moto.ficha_tecnica, ['DESPLAZAMIENTO', 'MOTOR', 'RELACION COMPRESION', 'ALIMENTACION', 'ENCENDIDO'])
-    const ficha_tecnica_potencia = getFichaPorNombres(moto.ficha_tecnica, ['POTENCIA', 'TORQUE', 'CAPACIDAD DE TANQUE'])
-    const ficha_tecnica_torque = getFichaPorNombres(moto.ficha_tecnica, ['TORQUE', 'TRASMISION', 'POTENCIA'])
-    const ficha_tecnica_peso = getFichaPorNombres(moto.ficha_tecnica, ['PESO', 'LONGITUD MAXIMA', 'ANCHO MAXIMO', 'ALTURA MAXIMA', 'DISTANCIA ENTRE EJES', 'DISTANCIA AL SUELO', 'ALTURA ASIENTO'])
+    const ficha_tecnica_cilindraje = getFichaPorNombres(moto.ficha_tecnica ?? [], ['DESPLAZAMIENTO', 'MOTOR', 'RELACION COMPRESION', 'ALIMENTACION', 'ENCENDIDO'])
+    const ficha_tecnica_potencia = getFichaPorNombres(moto.ficha_tecnica ?? [], ['POTENCIA', 'TORQUE', 'CAPACIDAD DE TANQUE'])
+    const ficha_tecnica_torque = getFichaPorNombres(moto.ficha_tecnica ?? [], ['TORQUE', 'TRASMISION', 'POTENCIA'])
+    const ficha_tecnica_peso = getFichaPorNombres(moto.ficha_tecnica ?? [], ['PESO', 'LONGITUD MAXIMA', 'ANCHO MAXIMO', 'ALTURA MAXIMA', 'DISTANCIA ENTRE EJES', 'DISTANCIA AL SUELO', 'ALTURA ASIENTO'])
 
     const imagenMoto = moto.imagen_portada || "/images/nophoto.jpg"
     const imagenTemp = [imagenMoto]
@@ -78,10 +78,8 @@ export function Motocicleta() {
     const cant =  moto?.imagenes && moto.imagenes.length > 0 ? '2' :'1'
     const handleNavigation = (id) => {
         setActiveMenu(id);
-        if (location.pathname !== "/") {
-            navigate("/", { state: { scrollTo: id } });
-        }
-    }
+        navigate("/modelos", { state: { scrollTo: id } });
+    };
     return (
         <>
             <div style={{ background: "#ffffff" }}>

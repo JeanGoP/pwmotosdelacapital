@@ -63,7 +63,7 @@ const Navbar = () => {
         >
           <img src="/images/logoMotoAndes.png" alt="Logo MotoCapital" className="logo-left"/>
           <div className="d-flex flex-column ms-1">
-            <span className="fw-bold fs-7 menu--titulo--img">Motos de la Capital</span>
+            <span className="menu--titulo--img">Motos de la Capital</span>
             <span className="text-muted menu--subtitulo--img">Distribuidora autorizada de Auteco</span>
           </div>
         </div>
@@ -100,23 +100,39 @@ const Navbar = () => {
               >Inicio</span>
             </li>
             <li className="nav-item">
-              <span 
-                className={`nav-link nav-a-item ${activeMenu === "modelos" ? "active" : ""}`} 
-                onClick={() => handleNavigation("modelos")}
-              >Modelos</span>
+            <NavLink 
+                to="/modelos" 
+                className={({ isActive }) => 
+                  `nav-link nav-a-item ${isActive ? "active" : ""}`
+                }
+                onClick={closeMobileMenu}
+              >
+                Modelos
+              </NavLink>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <span 
                 className={`nav-link nav-a-item ${activeMenu === "venta" ? "active" : ""}`} 
                 onClick={() => handleNavigation("venta")}
               >Posventa</span>
+            </li> */}
+           <li className="nav-item">
+            <NavLink 
+                to="/posventa" 
+                className={({ isActive }) => 
+                  `nav-link nav-a-item ${isActive ? "active" : ""}`
+                }
+                onClick={closeMobileMenu}
+              >
+                Posventa
+              </NavLink>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <span 
                 className={`nav-link nav-a-item ${activeMenu === "ubicacion" ? "active" : ""}`} 
                 onClick={() => handleNavigation("ubicacion")}
               >Ubicación</span>
-            </li>
+            </li> */}
             <li className="nav-item">
             <NavLink 
                 to="/promocion" 
@@ -141,7 +157,17 @@ const Navbar = () => {
                 Cotización
               </NavLink>
             </li>
-
+            <li className="nav-item">
+              <NavLink 
+                to="/conocenos" 
+                className={({ isActive }) => 
+                  `nav-link nav-a-item ${isActive ? "active" : ""}`
+                }
+                onClick={closeMobileMenu}
+              >
+                Conócenos
+              </NavLink>
+            </li>
             {/* WhatsApp */}
             <li className="nav-item mx-2 my-lg-0 my-2 li--btnwhatsapp">
               <a  
