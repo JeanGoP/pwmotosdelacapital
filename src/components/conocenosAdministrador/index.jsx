@@ -58,7 +58,7 @@ const ConocenosAdministrador = ({getHistoria = '', getMision = '', getVision='' 
     descripcionValor: "",
   });
 
-  const iconos = ['heart2', 'target2', 'users2', 'Handshake', 'award', 'lightbulb'];
+  const iconos = ['heart', 'Award', 'Handshake', 'Shield', 'Users', 'Sparkles','Zap'];
 
   const agregarValores = () => {
     if (formDataValores.titulovalor && formDataValores.icono && formDataValores.descripcionValor) {

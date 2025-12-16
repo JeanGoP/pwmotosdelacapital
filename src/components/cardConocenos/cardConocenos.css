@@ -1,0 +1,40 @@
+.card-conocenos--new {
+
+  border-radius: 12px;
+  padding: 32px 20px;
+
+  text-align: center;
+  border: none;
+
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  }
+  
+  .icon-wrapper--new--cono {
+   
+    color: white;
+    font-size: 32px;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+  
+  .titulo--conocenos{
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #ffffff;
+  }
+  
+  .cuerpo--conocenos {
+    font-size: 15px;
+    color: #ffffff;
+    line-height: 1.4;
+  }
+  
+
+  

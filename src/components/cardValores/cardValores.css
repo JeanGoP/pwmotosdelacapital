@@ -1,0 +1,48 @@
+.valor-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 32px 20px;
+
+    text-align: center;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .valor-card:hover {
+    transform: translateY(-8px);
+    /* border-color: #d60000 ; */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+
+  }
+
+  /* Icono circular */
+  .valor-icono {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 16px auto;
+    border-radius: 50%;
+    background-color: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    color: #d60000;
+    transition: all 0.3s ease;
+  }
+
+  /* Título */
+  .valor-titulo {
+
+    font-size: 20px;
+    margin-bottom: 8px;
+   
+  }
+
+  /* Descripción */
+  .valor-descripcion {
+    color: #6c757d;
+    font-size: 14px;
+    margin: 0;
+  }

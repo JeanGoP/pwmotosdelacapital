@@ -286,11 +286,6 @@ export function Home() {
                                         <Cards
                                             icono=""
                                             titulo={producto.producto_nombre}
-                                            // categoria={
-                                            //     producto.segmento && producto.segmento.length > 0 && producto.segmento[0] !== ""
-                                            //         ? producto.segmento[0]
-                                            //         : "TODOS"
-                                            // }
                                             categoria={producto.marca_nombre || ''}
                                             cuerpo={
                                                 producto.segmento && producto.segmento.length > 0 && producto.segmento[0] !== ""
@@ -329,7 +324,7 @@ export function Home() {
                                     </div>
                                 ))
                             )}
-                            {/* Cargar Mas */}
+                          
                             {1 === 1 && (
                                 <div className="text-center mt-4">
                                     <button className="btn btn-outline-primary btn__mostrarMas" onClick={() => handleNavigation('/modelos')}>
@@ -373,10 +368,6 @@ export function Home() {
                             ))}
 
                         </div>
-                        {/* Ubicacion  */}
-                        <div id="ubicacion" >
-
-                        </div>
 
                     </div>
                 </div>
@@ -387,7 +378,6 @@ export function Home() {
                                 titulo='Conoce más sobre la pasión que nos mueve'
                                 cuerpo='Mira nuestro recorrido, calidad y compromiso con la movilidad en Colombia'
                                 urlyoutube={configuracionData?.rutaYoutube || ''}
-                                //urlyoutube='https://www.youtube.com/embed/El4K8byMpG8'
                                 opcion='A'
                             />
 

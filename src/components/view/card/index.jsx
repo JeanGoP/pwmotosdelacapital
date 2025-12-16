@@ -312,17 +312,17 @@ const Cards = ({ icono = '', titulo, cuerpo, categoria = '', precio = '', listaI
     );
   }
 
-  if (opcion == "VA") {
-    return (
-      <div className="valor-card h-100">
-        <div className="valor-icono">
-          {renderIcon()}
-        </div>
-        <h5 className="valor-titulo">{titulo}</h5>
-        <p className="valor-descripcion">{cuerpo}</p>
-      </div>
-    );
-  }
+  // if (opcion == "VA") {
+  //   return (
+  //     <div className="valor-card h-100">
+  //       <div className="valor-icono">
+  //         {renderIcon()}
+  //       </div>
+  //       <h5 className="valor-titulo">{titulo}</h5>
+  //       <p className="valor-descripcion">{cuerpo}</p>
+  //     </div>
+  //   );
+  // }
 
  
 }

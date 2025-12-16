@@ -1,0 +1,110 @@
+.HistoriaTimeline {
+    width: 100%;
+    padding: 80px 0;
+    position: relative;
+  }
+  
+  .HistoriaLinea {
+    position: relative;
+    max-width: 1100px;
+    margin: auto;
+  }
+  
+  .HistoriaLinea::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background-color: #002857;
+    transform: translateX(-50%);
+  }
+  
+  /* ===== ITEM ===== */
+  .HistoriaItem {
+    position: relative;
+    width: 50%;
+    padding: 30px 61px;
+    box-sizing: border-box;
+  }
+  
+  .HistoriaLeft {
+    left: 0;
+    text-align: right;
+  }
+  
+  .HistoriaRight {
+    left: 50%;
+    text-align: left;
+  }
+  
+  /* ===== CONTENIDO ===== */
+  .HistoriaContenido {
+    max-width: 420px;
+  }
+  
+  .HistoriaAnno {
+    display: inline-block;
+    padding: 8px 18px;
+    color: #fff;
+    border-radius: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    
+  }
+  
+  .HistoriaTitulo {
+    font-size: 20px;
+    margin: 10px 0;
+    color: #002857;
+  }
+  
+  .HistoriaDetalle {
+    font-size: 15px;
+    color: #5f6f85;
+    line-height: 1.5;
+  }
+  
+  /* ===== PUNTO ===== */
+  .HistoriaPunto {
+    position: absolute;
+    top: 40px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    z-index: 10;
+  }
+  
+  .HistoriaLeft .HistoriaPunto {
+    right: -10px;
+  }
+  
+  .HistoriaRight .HistoriaPunto {
+    left: -10px;
+  }
+  
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 768px) {
+    .HistoriaLinea::before {
+      left: 20px;
+    }
+  
+    .HistoriaItem {
+      width: 100%;
+      padding-left: 60px;
+      padding-right: 20px;
+      text-align: left;
+    }
+  
+    .HistoriaLeft,
+    .HistoriaRight {
+      left: 0;
+    }
+  
+    .HistoriaPunto {
+      left: 10px !important;
+    }
+  }
+  
