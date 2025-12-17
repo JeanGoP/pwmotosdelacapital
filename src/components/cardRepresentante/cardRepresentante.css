@@ -1,0 +1,53 @@
+.representante-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 32px 20px;
+    border: 1px solid #e9e9e9;
+    text-align: center;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .representante-card:hover {
+    transform: translateY(-8px);
+   
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+
+  }
+
+  .representante-icono {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 16px auto;
+    border-radius: 50%;
+    background-color: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    
+    box-shadow: 0 10px 8px rgba(0,0,0,0.05);
+
+  }
+  .representante-icono img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+  }
+
+  .representante-titulo {
+
+    font-size: 20px;
+    margin-bottom: 8px;
+    color:#002857;
+   
+  }
+
+
+  .representante-descripcion {
+    color: #6c757d;
+    font-size: 14px;
+    margin: 0;
+  }

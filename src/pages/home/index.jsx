@@ -434,7 +434,7 @@ export function Home() {
 
             </div>
             {/* cierre */}
-            <div className='home--contenido--1'>
+            <div className='home--contenido--1' id='ubicacionInicio'>
                 <div className="container">
                     <div className='row g-4 justify-content-center video-youtube-container'>
                         <SectionHeaderLiteBtn

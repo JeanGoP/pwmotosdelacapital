@@ -95,3 +95,25 @@
   
   }
   
+  .conocenos-btn {
+    background: #002857;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    transition: background 0.2s ease;
+    font-weight: 500;
+  }
+  
+  .conocenos-btn:hover {
+    background: #fff;
+    color: #002857;
+    border: 2px solid #fff;
+  }
+  
