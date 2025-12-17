@@ -9,47 +9,57 @@
   }
   
   .motoObjeto-nombre {
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 25px;
+    font-size: 19px;
+    margin-bottom: 15px;
+    color: #e60012;
+    font-family: Good Timing, Montserrat, sans-serif;
 
   }
   
   .motoObjeto-subtitulo {
-    color: #d32f2f;
-    font-weight: 600;
-    margin-bottom: 25px;
-    text-transform: uppercase;
+    color: #4a5565;
+    margin-bottom: 15px;
+    /* text-transform: uppercase; */
+    font-family: Poppins, Montserrat, sans-serif;
+
 
   }
   
   .motoObjeto-descripcion {
-    color: #555;
+    color:#1f325b;
     margin-bottom: 25px;
-    font-size: 20px;
+    font-size: 30px;
+    font-family: Poppins, Montserrat, sans-serif;
   }
   
   .motoObjeto-precio {
-    background: #d32f2f;
-    color: white;
+    background: #f9fafb;
+    color: #1f325b;
     padding: 16px;
     border-radius: 12px;
-    text-align: center;
+    text-align: left;
     margin-bottom: 20px;
+    border-left: 5px solid #1f325b;
   }
   
-  .motoObjeto-precio h3 {
+  .precio--moto{
     font-size: 30px;
-    font-weight: bold;
     margin: 0;
+    font-family: Good Timing, Montserrat, sans-serif;
   }
   
-  .motoObjeto-precio p {
+  .precio--titulo {
     font-size: 15px;
     margin: 5px 0 0;
     opacity: 90%;
+    color: #4a5565;
+    font-family: Good Timing, Montserrat, sans-serif;
   }
-  
+  .colores{
+    font-family: Good Timing, Montserrat, sans-serif;
+    color: #1f325b;
+    font-size: 15px;
+  }
   .motoObjeto-botones {
     display: flex;
     gap: 16px;
@@ -71,9 +81,11 @@
     flex: 1;
     padding: 12px;
     border-radius: 8px;
-    font-weight: bold;
+    font-family: Good Timing, Montserrat, sans-serif;
     cursor: pointer;
     border: 2px solid transparent;
+    font-size: larger;
+
   } 
   
   .btn-rojo--coti{
@@ -98,6 +110,8 @@
     color: #fff;
     transform: translateY(-2px);
   }
+/* 
+
   .motoObjeto-colores h5 {
     font-weight: bold;
     margin-bottom: 15px;
@@ -109,12 +123,12 @@
   
   .colores-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* siempre 2 columnas */
+    grid-template-columns: repeat(2, 1fr); 
     gap: 12px;
   }
   @media (max-width: 500px) {
     .colores-grid {
-      grid-template-columns: 1fr; /* solo una columna en móvil */
+      grid-template-columns: 1fr; 
     }
   }
   .color-btn {
@@ -169,6 +183,78 @@
     display: flex;
     justify-content: baseline;
   }
+ */
+
+ .motoObjeto-colores {
+  padding-top: 18px;
+}
+
+.motoObjeto-colores h5,
+.motoObjeto-colores .colores {
+  margin-bottom: 15px;
+  font-size: 15px;
+  font-family: Good Timing, Montserrat, sans-serif;
+}
 
 
-  
+.colores-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  gap: 24px;
+  justify-items: center;
+}
+
+
+.color-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.color-btn:hover {
+  transform: translateY(-2px);
+}
+
+
+.color-btn.activo .color-circle {
+  outline: 3px solid #d32f2f;
+  outline-offset: 3px;
+}
+
+
+.color-circle {
+  width: 40px;             
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #333;
+  display: block;
+  margin: 0 auto 8px auto;
+}
+
+
+.color-nombre {
+  font-size: 10px;
+  color: #333;
+  display: block;
+  text-align: center;
+  font-family: Good Timing, Montserrat, sans-serif;
+}
+
+
+.color-extra {
+  font-size: 12px;
+  color: #d32f2f;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+}
+
+
+@media (max-width: 500px) {
+  .colores-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+} 

@@ -2,47 +2,35 @@ import React, { useState } from "react";
 import "./carDetalle.css";
 import { FaBolt } from "react-icons/fa";
 import { Zap,Activity,Wrench,Scale,ChevronDown,ChevronUp } from "lucide-react";
+import { Gauge } from "lucide-react";
+import { Weight } from "lucide-react";
 
-const CardDetalle = ({ titulo='', contenido='', icono='' }) => {
+
+const CardDetalle = ({ titulo='', contenido='', icono='' , json = [], activo, onClick}) => {
   const [abierto, setAbierto] = useState(false);
   const renderIcon = () => {
     switch (icono) {
-      case "zap": return   <Zap  className="icono" />;
-      case "Activity": return   <Activity  className="icono" />;
-      case "Wrench": return   <Wrench className="icono" />;
-      case "Scale": return   <Scale className="icono" />;
+      case "Zap": return   <Zap  className="icono" size={50} />;
+      case "Activity": return   <Activity  className="icono" size={50} />;
+      case "Gauge": return   <Gauge className="icono" size={50} />;
+      case "Weight": return   <Weight className="icono" size={50} />;
       default: return null;
     }
   };
 
   return (
-    <div className={`card-detalle ${abierto ? "activo" : ""} `}>
-      <div className="card-header-detalle">
-        <div className="card-titulo-detalle">
-          {renderIcon()}
-          <h4 className="titulo---detalle">{titulo}</h4>
-        </div>
-        <button
-          className="btn-toggle-detalle"
-          onClick={() => setAbierto(!abierto)}
-        >
-          {abierto ?(
-            <>
-                Ver detalles <ChevronUp size={18} />
-            </>
-          ):(
-            <>
-            Ver detalles <ChevronDown size={18} />
-        </>
-          )}
-        </button>
-      
-      </div>
+    <div>
+    <div
+      className={`detalle-card ${activo ? "activa" : ""} h-100`}
+      onClick={onClick}
+    >
+          <div className="detalle-icono" >
+            {renderIcon()}
+          </div>
+          <h5 className="detalle-titulo">{titulo}</h5>
+        
+    </div>
 
-      <div className={`card-contenido-detalle ${abierto ? "abierto" : ""}`}>
-      
-        {contenido}
-      </div>
     </div>
   );
 };

@@ -1,0 +1,72 @@
+.especificaciones-card {
+    background: #ffffff;
+    border-radius: 16px;
+    border-top: 4px solid  #002857 ;
+    padding: 30px 32px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  }
+  
+  /* TÍTULO */
+  .especificaciones-titulo {
+    font-size: 22px;
+    color: #002857;
+    margin-bottom: 14px;
+    font-family: Good Timing, Montserrat, sans-serif;
+  }
+  
+  /* LÍNEA */
+  .especificaciones-divider {
+    border: none;
+    height: 1px;
+    background-color: #c5c9cf;
+    margin-bottom: 24px;
+  }
+  
+  /* GRID */
+  .especificaciones-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 40px;
+    row-gap: 22px;
+  }
+  
+  /* ITEM */
+  .especificaciones-item {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #f0f2f5;
+  }
+  
+  /* TEXTO */
+  .especificaciones-nombre {
+  
+    color: #1f2937;
+    font-size: 16px;
+  }
+  
+  .especificaciones-detalle {
+    
+    color: #002857;
+    font-size: 14px;
+    text-align: right;
+    max-width: 60%;
+  }
+  
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .especificaciones-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .especificaciones-item {
+      flex-direction: column;
+      gap: 6px;
+    }
+  
+    .especificaciones-detalle {
+      text-align: left;
+      max-width: 100%;
+    }
+  }
+  

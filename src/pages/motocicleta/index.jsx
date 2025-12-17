@@ -9,16 +9,18 @@ import CardMotoDetalle from "../../components/cardMotoDetalle";
 import SectionHeader from "../../components/view/sectionHeader";
 import CardDetalle from "../../components/cardDetalle";
 import Interesar from "../../components/interesar";
+import Especificaciones from "../../components/especificaciones";
 export function Motocicleta() {
     const navigate = useNavigate();
     const location = useLocation();
     const [activeMenu, setActiveMenu] = useState("inicio");
+    const [detalleActivo, setDetalleActivo] = useState(null);
     const motosTemp = ["/images/moto_1.png", "/images/moto_2.png", "/images/moto_3.png", "/images/moto_4.png", "/images/moto_5.png", "/images/moto_6.png"]
     const moto = location.state?.moto;
     if (!moto) {
         return <p>No se encontró información de la motocicleta.</p>;
     }
-
+    console.log(moto)
     const [coloresMoto, setColoresMoto] = useState(() => {
         if (moto?.color && moto.color.length > 0) {
             return moto.color.map((c, index) => ({
@@ -33,40 +35,19 @@ export function Motocicleta() {
         return [];
     });
 
-    const getFichaPorNombres = (fichaTecnica=[], nombres=[]) => {
+    const getFichaPorNombres = (fichaTecnica = [], ids = []) => {
         return fichaTecnica
-            .filter(item => nombres.includes(item.ficha_tecnica_name))
+            .filter(item => ids.includes(item.ficha_tecnica_id))
             .map(item => ({
                 nombre: item.ficha_tecnica_name,
                 detalle: item.ficha_tecnica_detalle
             }));
     };
-    const nombres_ficha = [
-        { nombre: 'DESPLAZAMIENTO', nombre_reemplazo: 'Desplazamiento' },
-        { nombre: 'MOTOR', nombre_reemplazo: 'Tipo de motor' },
-        { nombre: 'RELACION COMPRESION', nombre_reemplazo: 'Relación de compresión' },
-        { nombre: 'ALIMENTACION', nombre_reemplazo: 'Alimentación' },
-        { nombre: 'ENCENDIDO', nombre_reemplazo: 'Encendido' },
-        { nombre: 'POTENCIA', nombre_reemplazo: 'Potencia máxima' },
-        { nombre: 'TORQUE', nombre_reemplazo: 'Torque máximo' },
-        { nombre: 'CAPACIDAD DE TANQUE', nombre_reemplazo: 'Capacidad del tanque' },
-        { nombre: 'TRASMISION', nombre_reemplazo: 'Transmisión' },
-        { nombre: 'PESO', nombre_reemplazo: 'Peso total' },
-        { nombre: 'LONGITUD MAXIMA', nombre_reemplazo: 'Longitud máxima' },
-        { nombre: 'ANCHO MAXIMO', nombre_reemplazo: 'Ancho máximo' },
-        { nombre: 'ALTURA MAXIMA', nombre_reemplazo: 'Altura máxima' },
-        { nombre: 'DISTANCIA ENTRE EJES', nombre_reemplazo: 'Distancia entre ejes' },
-        { nombre: 'DISTANCIA AL SUELO', nombre_reemplazo: 'Distancia al suelo' },
-        { nombre: 'ALTURA ASIENTO', nombre_reemplazo: 'Altura del asiento' }
-    ]
-    const getNombreReemplazo = (nombre) => {
-        const encontrado = nombres_ficha.find(n => n.nombre === nombre);
-        return encontrado ? encontrado.nombre_reemplazo : nombre;
-    };
-    const ficha_tecnica_cilindraje = getFichaPorNombres(moto.ficha_tecnica ?? [], ['DESPLAZAMIENTO', 'MOTOR', 'RELACION COMPRESION', 'ALIMENTACION', 'ENCENDIDO'])
-    const ficha_tecnica_potencia = getFichaPorNombres(moto.ficha_tecnica ?? [], ['POTENCIA', 'TORQUE', 'CAPACIDAD DE TANQUE'])
-    const ficha_tecnica_torque = getFichaPorNombres(moto.ficha_tecnica ?? [], ['TORQUE', 'TRASMISION', 'POTENCIA'])
-    const ficha_tecnica_peso = getFichaPorNombres(moto.ficha_tecnica ?? [], ['PESO', 'LONGITUD MAXIMA', 'ANCHO MAXIMO', 'ALTURA MAXIMA', 'DISTANCIA ENTRE EJES', 'DISTANCIA AL SUELO', 'ALTURA ASIENTO'])
+
+    const ficha_tecnica_cilindraje = getFichaPorNombres(moto.ficha_tecnica ?? [], ['1', '11', '5', '4'])
+    const ficha_tecnica_potencia = getFichaPorNombres(moto.ficha_tecnica ?? [], ['21', '12'])
+    const ficha_tecnica_torque = getFichaPorNombres(moto.ficha_tecnica ?? [], ['22', '28'])
+    const ficha_tecnica_peso = getFichaPorNombres(moto.ficha_tecnica ?? [], ['16', '13'])
 
     const imagenMoto = moto.imagen_portada || "/images/nophoto.jpg"
     const imagenTemp = [imagenMoto]
@@ -75,7 +56,7 @@ export function Motocicleta() {
             ? moto.imagenes
             : imagenTemp//motosTemp//["/images/nophoto.jpg"]
     );
-    const cant =  moto?.imagenes && moto.imagenes.length > 0 ? '2' :'1'
+    const cant = moto?.imagenes && moto.imagenes.length > 0 ? '2' : '1'
     const handleNavigation = (id) => {
         setActiveMenu(id);
         navigate("/modelos", { state: { scrollTo: id } });
@@ -108,12 +89,12 @@ export function Motocicleta() {
                         </div>
                         <div className="col-sm-12 col-md-12 col-lg-6">
                             <CardMotoDetalle
-                                nombre={moto.producto_nombre || 'No hay registro'}
+                                nombre={moto.marca_nombre || 'No hay registro'}
                                 subtitulo={
                                     moto.segmento && moto.segmento.length > 0 && moto.segmento[0] !== ""
-                                      ? moto.segmento[0]
-                                      : "TODOS"
-                                  }
+                                        ? moto.segmento[0]
+                                        : "TODOS"
+                                }
                                 descripcion={moto.descripcion_amplia || 'No hay registro'}
                                 precio={(() => {
                                     const precios = moto.precio || {};
@@ -142,130 +123,86 @@ export function Motocicleta() {
             </div>
             <div style={{ background: "#f9fafb", paddingTop: "20px" }}>
                 <div className="container-fluid contenido--caracteristicas">
-                    <div className='row g-4 '>
-                        <SectionHeader
-                            titulo='CARACTERÍSTICAS DESTACADAS'
-                            cuerpo=''
-                            titleSize="clamp(1rem, 4vw, 2rem)"
-                            subtitleSize="clamp(1.3rem, 2vw, 1.27rem)"
-                        />
+                    <div className='row g-4 justify-content-center align-items-center text-center'>
+                        <p style={{ fontSize: '28px', color: '#1f325b', paddingTop: '20px', paddingBottom: '20px' }}>Ver más detalles del modelo</p>
                     </div>
                     <div className="row row--cards-especificiacion">
-                        <div className="col-sm-12 col-md-6 col-lg-6" style={{ paddingBottom: "40px" }}>
+                        <div className="col-sm-12 col-md-3 col-lg-3" style={{ paddingBottom: "40px" }}>
                             <CardDetalle
-                                titulo="CILINDRAJE"
-                                contenido={
-                                    <div>
-                                        <hr className="hr--card--" />
-                                        <h5 className="card-titulo-h5">ESPECIFICACIONES DEL MOTOR</h5>
-
-                                        {ficha_tecnica_cilindraje.every(item => !item.detalle) ? (
-                                            <p className="text-muted">No hay resultados</p>
-                                        ) : (
-                                            ficha_tecnica_cilindraje.map((item, index) => (
-                                                <div className="card-item-detalle" key={index}>
-                                                    <span>
-                                                        <b>{getNombreReemplazo(item.nombre)}:</b>
-                                                    </span>
-                                                    <span className="valor-detalle">
-                                                        {item.detalle ? item.detalle : "No disponible"}
-                                                    </span>
-                                                </div>
-                                            ))
-                                        )}
-                                    </div>
+                                titulo="Especificacione Destacadas"
+                                icono="Gauge"
+                                json={ficha_tecnica_cilindraje}
+                                activo={detalleActivo?.titulo === "Especificaciones Destacadas"}
+                                onClick={() =>
+                                    setDetalleActivo({
+                                        titulo: "Especificaciones Destacadas",
+                                        json: ficha_tecnica_cilindraje
+                                    })
                                 }
-                                icono="zap"
                             />
                         </div>
-                        <div className="col-sm-12 col-md-6 col-lg-6" style={{ paddingBottom: "40px" }}>
+                        <div className="col-sm-12 col-md-3 col-lg-3" style={{ paddingBottom: "40px" }}>
                             <CardDetalle
-                                titulo="POTENCIA"
-                                contenido={
-                                    <div>
-                                        <hr className="hr--card--" />
-                                        <h5 className="card-titulo-h5">RENDIMIENTO Y POTENCIA</h5>
-
-                                        {ficha_tecnica_potencia.every(item => !item.detalle) ? (
-                                            <p className="text-muted">No hay resultados</p>
-                                        ) : (
-                                            ficha_tecnica_potencia.map((item, index) => (
-                                                <div className="card-item-detalle" key={index}>
-                                                    <span>
-                                                        <b>{getNombreReemplazo(item.nombre)}:</b>
-                                                    </span>
-                                                    <span className="valor-detalle">
-                                                        {item.detalle ? item.detalle : "No disponible"}
-                                                    </span>
-                                                </div>
-                                            ))
-                                        )}
-                                    </div>
+                                titulo="Potencia"
+                                icono="Zap"
+                                json={ficha_tecnica_potencia}
+                                activo={detalleActivo?.titulo === "Potencia"}
+                                onClick={() =>
+                                    setDetalleActivo({
+                                        titulo: "Potencia",
+                                        json: ficha_tecnica_potencia
+                                    })
                                 }
+                            />
+                        </div>
+                        <div className="col-sm-12 col-md-3 col-lg-3" style={{ paddingBottom: "40px" }}>
+                            <CardDetalle
+                                titulo="Torque"
                                 icono="Activity"
+                                json={ficha_tecnica_torque}
+                                activo={detalleActivo?.titulo === "Torque"}
+                                onClick={() =>
+                                    setDetalleActivo({
+                                        titulo: "Torque",
+                                        json: ficha_tecnica_torque
+                                    })
+                                }
+                            />
+                        </div>
+                        <div className="col-sm-12 col-md-3 col-lg-3" style={{ paddingBottom: "40px" }}>
+                            <CardDetalle
+                                titulo="Peso"
+                                icono="Weight"
+                                json={ficha_tecnica_peso}
+                                activo={detalleActivo?.titulo === "Peso"}
+                                onClick={() =>
+                                    setDetalleActivo({
+                                        titulo: "Peso",
+                                        json: ficha_tecnica_peso
+                                    })
+                                }
                             />
                         </div>
                     </div>
-                    <div className="row row--cards-especificiacion" style={{ paddingBottom: "40px" }}>
-                        <div className="col-sm-12 col-md-6 col-lg-6" style={{ paddingBottom: "40px" }}>
-                            <CardDetalle
-                                titulo="TORQUE"
-                                contenido={
-                                    <div>
-                                        <hr className="hr--card--" />
-                                        <h5 className="card-titulo-h5">TORQUE Y TRANSMISIÓN</h5>
-
-                                        {ficha_tecnica_torque.every(item => !item.detalle) ? (
-                                            <p className="text-muted">No hay resultados</p>
-                                        ) : (
-                                            ficha_tecnica_torque.map((item, index) => (
-                                                <div className="card-item-detalle" key={index}>
-                                                    <span>
-                                                        <b>{getNombreReemplazo(item.nombre)}:</b>
-                                                    </span>
-                                                    <span className="valor-detalle">
-                                                        {item.detalle ? item.detalle : "No disponible"}
-                                                    </span>
-                                                </div>
-                                            ))
-                                        )}
+                    <div className="row">
+                        <div className="col-sm-12 col-md-12 col-lg-12" style={{ paddingBottom: "40px" }}>
+                            {detalleActivo && (
+                                <div className="row">
+                                    <div className="col-12 pb-4">
+                                        <Especificaciones
+                                            titulo={detalleActivo.titulo}
+                                            json={detalleActivo.json}
+                                        />
                                     </div>
-                                }
-                                icono="Wrench"
-                            />
-                        </div>
-                        <div className="col-sm-12 col-md-6 col-lg-6" style={{ paddingBottom: "40px" }}>
-                            <CardDetalle
-                                titulo="PESO"
-                                contenido={
-                                    <div>
-                                        <hr className="hr--card--" />
-                                        <h5 className="card-titulo-h5">DIMENSIONES Y PESO</h5>
-
-                                        {ficha_tecnica_peso.every(item => !item.detalle) ? (
-                                            <p className="text-muted">No hay resultados</p>
-                                        ) : (
-                                            ficha_tecnica_peso.map((item, index) => (
-                                                <div className="card-item-detalle" key={index}>
-                                                    <span>
-                                                        <b>{getNombreReemplazo(item.nombre)}:</b>
-                                                    </span>
-                                                    <span className="valor-detalle">
-                                                        {item.detalle ? item.detalle : "No disponible"}
-                                                    </span>
-                                                </div>
-                                            ))
-                                        )}
-                                    </div>
-                                }
-                                icono="Scale"
-                            />
+                                </div>
+                            )}
                         </div>
                     </div>
+
                 </div>
             </div>
             <div style={{ background: "#ffffff" }}>
-                <div className="container-fluid contenido--caracteristicas" style={{ paddingBottom: "30px", paddingTop:"30px" }}>
+                <div className="container-fluid contenido--caracteristicas" style={{ paddingBottom: "50px", paddingTop: "50px" }}>
                     <div className='row g-4'>
                         <div className="col-sm-12 col-md-6 col-lg-6" style={{ paddingBottom: "10px" }}>
                             <Interesar opcion="A" />
