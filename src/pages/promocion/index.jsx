@@ -141,7 +141,7 @@ export function Promocion() {
             </div>
             <div style={{ background: '#002857', paddingBottom: '40px' }}>
                 <div className="terminos-wrapper">
-                    <h2 className="terminos-title">Términos y condiciones</h2>
+                    <p className="terminos-title">Términos y condiciones</p>
 
                     <ul className="terminos-list">
                         <li>Las promociones están sujetas a disponibilidad de inventario.</li>

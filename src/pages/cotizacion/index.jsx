@@ -57,29 +57,33 @@ export function Cotizacion() {
 
       </div>
       <div style={{ background: '#002857' }}>
-      <div className="container" style={{ paddingTop: '70px' }}>
-      <CotizacionCard />
-      </div>
+        <div className="container" style={{ paddingTop: '70px' }}>
+          <CotizacionCard />
+        </div>
       </div>
       <div style={{ background: '#ffffff' }}>
         <div className="container" style={{ paddingBottom: "80px", paddingTop: '50px' }}>
-
-
+        <div className="linea-container">
+      <span className="linea-decorativa"></span>
+    </div>
+          <div className="row justify-content-center align-items-center text-center">
+            <p className="" style={{ fontSize: '18px', color: '#002857' }}>¿Por qué cotizar con nosotros?</p>
+          </div>
           <div className="cotizacion-container-card">
-           
+
             {dataCotizacion.map((item, index) => (
-               <div className="col-sm-12 col-md-4 col-lg-3 col-xl-3">
-              <CardCotizacion
-                key={index}
-                icono={item.icono}
-                titulo={item.titulo}
-                cuerpo={item.cuerpo}
-                color={item.color}
-              />
-               </div>
+              <div className="col-sm-12 col-md-4 col-lg-3 col-xl-3">
+                <CardCotizacion
+                  key={index}
+                  icono={item.icono}
+                  titulo={item.titulo}
+                  cuerpo={item.cuerpo}
+                  color={item.color}
+                />
+              </div>
             ))}
 
-         
+
           </div>
         </div>
       </div>
