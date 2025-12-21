@@ -191,7 +191,7 @@ export function Conocenos() {
             </div>
             <div style={{ background: "#f9fafb" }}>
                 <div className="d-flex flex-column justify-content-center align-items-center text-center">
-                    <p className="" style={{ paddingTop: '60px', fontSize: '40px', color: '#002857' }}>Nuestros Valores</p>
+                    <p className="" style={{ paddingTop: '60px', fontSize: '37px', color: '#002857' }}>Nuestros Valores</p>
 
                     <p className="" style={{ fontSize: '18px', color: '#4a5565' }}>Los principios que nos guían en cada acción y decisión</p>
                 </div>
@@ -255,7 +255,7 @@ export function Conocenos() {
             <div style={{ background: "#f9fafb", paddingBottom: '30px' }}>
                 <div className="container">
                     <div className="justify-content-center align-items-center text-center" style={{ paddingTop: '70px' }}>
-                        <p className="" style={{ fontSize: '39px', color: '#002857' }}>Nuestra Trayectoria</p>
+                        <p className="" style={{ fontSize: '37px', color: '#002857' }}>Nuestra Trayectoria</p>
                     </div>
                     <HistoriaTimeline data={jsonHistoria} />
                 </div>
@@ -263,7 +263,7 @@ export function Conocenos() {
             <div style={{ background: "#fff" }}>
                 <div className="container">
                     <div className="justify-content-center align-items-center text-center" style={{ paddingTop: '70px' }}>
-                        <p className="" style={{ fontSize: '39px', color: '#002857' }}>Marcas que Representamos</p>
+                        <p className="" style={{ fontSize: '37px', color: '#002857' }}>Marcas que Representamos</p>
                         <p className="" style={{ fontSize: '18px', color: '#4a5565' }}>Trabajamos con las mejores marcas del mundo para ofrecerte variedad, tecnología y calidad</p>
                     </div>
 
@@ -287,8 +287,8 @@ export function Conocenos() {
             </div>
             <div style={{ background: "#002857" }}>
                 <div className="d-flex flex-column justify-content-center align-items-center text-center" style={{paddingBottom:'70px'}}>
-                    <p className="titulo--card--conocenos">Únete a nuestra familia</p>
-                    <p className="" style={{ fontSize: '18px', color: '#fff' }}>Visítanos en nuestras sedes o contáctanos para conocer más sobre nuestros productos y servicios.</p>
+                    <p className="" style={{ fontSize: 'clamp(1.7rem, 2.5vw, 2.5rem)', color: '#fff', paddingTop:'40px' }}>Únete a nuestra familia</p>
+                    <p className="" style={{ fontSize: '16px', color: '#fff' }}>Visítanos en nuestras sedes o contáctanos para conocer más sobre nuestros productos y servicios.</p>
                     <div className="container">
                         <div className="row justify-content-center gap-3" style={{paddingTop:'20px'}}>
 
