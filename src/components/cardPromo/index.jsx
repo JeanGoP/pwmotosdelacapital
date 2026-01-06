@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import { LuMessageCircle } from "react-icons/lu";
 
 
-const CardPromo = ({ imagen, titulo, cuerpo, categoria='' }) => {
+const CardPromo = ({ imagen, titulo, cuerpo, categoria='', whatsapp='' }) => {
     const [showModal, setShowModal] = useState(false);
     useEffect(() => {
       if (showModal) {
@@ -16,8 +16,8 @@ const CardPromo = ({ imagen, titulo, cuerpo, categoria='' }) => {
     }, [showModal]);
     const handleClickWhatsapp = () => {
     
-        // const telefono = "57"+whatsapp; 
-         const telefono = "5712541543"; 
+         const telefono = "57"+whatsapp; 
+       //  const telefono = "5712541543"; 
          const mensaje = "Hola, quiero más información"; 
          const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
      

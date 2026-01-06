@@ -26,7 +26,7 @@ function AppRoutesWrapper() {
   return (
     <>
         {!ocultarLayout && <Navbar />}
-        {!ocultarLayout && <BotonFlotante />}
+        {/* {!ocultarLayout && <BotonFlotante />} */}
         <ScrollToTop /> 
       <Routes>
         <Route path="/" element={<Home />} />

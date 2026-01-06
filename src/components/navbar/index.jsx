@@ -46,7 +46,7 @@ const Navbar = () => {
   };
   const handleClickWhatsapp = () => {
     
-    const telefono = "573152959977"; 
+    const telefono = "5742044274"; 
     const mensaje = "Hola, quiero más información"; 
     const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
 
@@ -172,7 +172,7 @@ const Navbar = () => {
             <li className="nav-item mx-2 my-lg-0 my-2 li--btnwhatsapp">
               <a  
                 className="btn btn-whatsapp-menu btn-sm"
-                href="https://wa.me/573152959977" 
+                href="https://wa.me/5742044274" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 onClick={closeMobileMenu}
