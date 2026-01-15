@@ -30,8 +30,8 @@ function AppRoutesWrapper() {
         <ScrollToTop /> 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login/administrador" element={<ProtectedRoute><Administrador /></ProtectedRoute> } />
-        <Route path="/login" element={<Login />} />
+        {/* <Route path="/login/administrador" element={<ProtectedRoute><Administrador /></ProtectedRoute> } />
+        <Route path="/login" element={<Login />} /> */}
         <Route path="/promocion" element={<Promocion />} />
         <Route path="/cotizacion" element={<Cotizacion />} />
         <Route path="/conocenos" element={<Conocenos />} />
