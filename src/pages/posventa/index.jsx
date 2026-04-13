@@ -102,7 +102,7 @@ export function Posventa() {
       <div className="posventaMoto-container"
         style={{
           //   backgroundImage: `url('${configuracionData?.rutaPortadaCotizador}')`,
-          backgroundImage: `url('${rutaImagenFondo}')`,
+         // backgroundImage: `url('${rutaImagenFondo}')`,
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           backgroundSize: "cover",
