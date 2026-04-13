@@ -23,8 +23,8 @@ export function Posventa() {
   }, []);
   const rutaImagenFondo =
     window.innerWidth <= 576
-      ? "/images/posventaFondoCelular.png"
-      : "/images/posventaFondo.png";
+      ? "/images/PosventaMotoCapital.jpeg"
+      : "/images/PosventaMotoCapital.jpeg";
 
   const jsonPosventa = [
     {
@@ -102,10 +102,11 @@ export function Posventa() {
       <div className="posventaMoto-container"
         style={{
           //   backgroundImage: `url('${configuracionData?.rutaPortadaCotizador}')`,
-         // backgroundImage: `url('${rutaImagenFondo}')`,
+          backgroundImage: `url('${rutaImagenFondo}')`,
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           backgroundSize: "cover",
+          marginTop: '55px'
         }}
       >
 
