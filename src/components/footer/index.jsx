@@ -27,6 +27,7 @@ function Footer() {
 
 
   const handleNavigation = (id) => {
+    localStorage.setItem('producto', '');
     setActiveMenu(id);
 
     if (location.pathname !== "/") {
@@ -85,26 +86,41 @@ function Footer() {
               <li><a onClick={() => handleNavigation("inicio")} style={{ fontSize: "16px", color: "rgb(177, 175, 175)" }} className="a-footer">Inicio</a></li>
               <li><NavLink style={{ fontSize: "16px", color: "rgb(177, 175, 175)" }} className="a-footer"
                 to="/modelos"
+                onClick={() => {
+                  localStorage.setItem('producto', '');
+                }}
               >
                 Modelos
               </NavLink></li>
               <li><NavLink style={{ fontSize: "16px", color: "rgb(177, 175, 175)" }} className="a-footer"
                 to="/posventa"
+                onClick={() => {
+                  localStorage.setItem('producto', '');
+                }}
               >
                 Posventa
               </NavLink></li>
               <li><NavLink style={{ fontSize: "16px", color: "rgb(177, 175, 175)" }} className="a-footer"
                 to="/promocion"
+                onClick={() => {
+                  localStorage.setItem('producto', '');
+                }}
               >
                 Promociones
               </NavLink></li>
               <li><NavLink style={{ fontSize: "16px", color: "rgb(177, 175, 175)" }} className="a-footer"
                 to="/cotizacion"
+                onClick={() => {
+                  localStorage.setItem('producto', '');
+                }}
               >
                 Cotización
               </NavLink></li>
               <li><NavLink style={{ fontSize: "16px", color: "rgb(177, 175, 175)" }} className="a-footer"
                 to="/conocenos"
+                onClick={() => {
+                  localStorage.setItem('producto', '');
+                }}
               >
                 Conócenos
               </NavLink></li>
@@ -116,16 +132,25 @@ function Footer() {
             <ul className="list-unstyled">
               <li><NavLink style={{ fontSize: "16px", color: "rgb(177, 175, 175)" }} className="a-footer"
                 to="/posventa"
+                onClick={() => {
+                  localStorage.setItem('producto', '');
+                }}
               >
                 Servicio Técnico
               </NavLink></li>
               <li><NavLink style={{ fontSize: "16px", color: "rgb(177, 175, 175)" }} className="a-footer"
                 to="/posventa"
+                onClick={() => {
+                  localStorage.setItem('producto', '');
+                }}
               >
                 Repuestos Originales
               </NavLink></li>
               <li><NavLink style={{ fontSize: "16px", color: "rgb(177, 175, 175)" }} className="a-footer"
                 to="/cotizacion"
+                onClick={() => {
+                  localStorage.setItem('producto', '');
+                }}
               >
                 Financiación
               </NavLink></li>
@@ -143,41 +168,65 @@ function Footer() {
               </NavLink></li> */}
               <li><NavLink style={{ fontSize: "15px", color: "rgb(177, 175, 175)" }} className="a-footer"
                 to="/modelos"
+                onClick={() => {
+                  localStorage.setItem('producto', '');
+                }}
               >
                 TVS
               </NavLink></li>
               <li><NavLink style={{ fontSize: "15px", color: "rgb(177, 175, 175)" }} className="a-footer"
                 to="/modelos"
+                onClick={() => {
+                  localStorage.setItem('producto', '');
+                }}
               >
                 VICTORY
               </NavLink></li>
               <li><NavLink style={{ fontSize: "15px", color: "rgb(177, 175, 175)" }} className="a-footer"
                 to="/modelos"
+                onClick={() => {
+                  localStorage.setItem('producto', '');
+                }}
               >
                 KYMCO
               </NavLink></li>
               <li><NavLink style={{ fontSize: "15px", color: "rgb(177, 175, 175)" }} className="a-footer"
                 to="/modelos"
+                onClick={() => {
+                  localStorage.setItem('producto', '');
+                }}
               >
                 BENELLI
               </NavLink></li>
               <li><NavLink style={{ fontSize: "15px", color: "rgb(177, 175, 175)" }} className="a-footer"
                 to="/modelos"
+                onClick={() => {
+                  localStorage.setItem('producto', '');
+                }}
               >
                 KAWASAKI
               </NavLink></li>
               <li><NavLink style={{ fontSize: "15px", color: "rgb(177, 175, 175)" }} className="a-footer"
                 to="/modelos"
+                onClick={() => {
+                  localStorage.setItem('producto', '');
+                }}
               >
                 ZONTES
               </NavLink></li>
               <li><NavLink style={{ fontSize: "15px", color: "rgb(177, 175, 175)" }} className="a-footer"
                 to="/modelos"
+                onClick={() => {
+                  localStorage.setItem('producto', '');
+                }}
               >
                 CERONTE
               </NavLink></li>
               <li><NavLink style={{ fontSize: "15px", color: "rgb(177, 175, 175)" }} className="a-footer"
                 to="/modelos"
+                onClick={() => {
+                  localStorage.setItem('producto', '');
+                }}
               >
                 ELÉCTRICOS
               </NavLink></li>

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./CardMotoDetalle.css";
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 
-const CardMotoDetalle = ({ nombre, subtitulo, descripcion, precio, colores }) => {
+const CardMotoDetalle = ({ nombre, subtitulo, descripcion, precio, colores, producto_id }) => {
   const [colorSeleccionado, setColorSeleccionado] = useState(null);
   const [activeMenu, setActiveMenu] = useState("inicio");
   const location = useLocation();
@@ -29,6 +29,10 @@ const CardMotoDetalle = ({ nombre, subtitulo, descripcion, precio, colores }) =>
     }
 
   };
+  const handleCotizacion = () => {
+    localStorage.setItem('producto', producto_id);
+    navigate('/cotizacion');
+  };
   const handleClickWhatsapp = () => {
 
     const telefono = "573152959977";
@@ -50,7 +54,16 @@ const CardMotoDetalle = ({ nombre, subtitulo, descripcion, precio, colores }) =>
       </div>
 
       <div className="motoObjeto-botones">
-        <button className="btn btn-rojo--coti" > <NavLink style={{ color: "white", textDecoration: "none" }} to="/cotizacion" > Solicitar cotización</NavLink></button>
+      <NavLink
+        to="/cotizacion"
+        className="btn btn-rojo--coti"
+        style={{ color: "white", textDecoration: "none", display: "inline-block" }}
+        onClick={() => {
+          localStorage.setItem('producto', producto_id);
+        }}
+      >
+        Solicitar cotización
+      </NavLink>
         {/* <button className="btn btn-rojo--contac" onClick={handleClickWhatsapp}>Contáctanos</button> */}
       </div>
       {/* 

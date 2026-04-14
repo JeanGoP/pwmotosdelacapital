@@ -38,6 +38,15 @@ export function Cotizacion() {
     }
   }, []);
 
+
+  const rawProducto = localStorage.getItem('producto');
+
+  const id_producto = rawProducto && rawProducto !== 'null' && rawProducto !== 'undefined' ? rawProducto : null;
+
+  const rutaBase = configuracionData?.rutaCotizador;
+
+  const rutaIframe = id_producto ? `${rutaBase}?producto=${id_producto}` : rutaBase;
+
   return (
     <div style={{ background: "#002857" }}>
       <div className="cotizacion-container"
@@ -58,7 +67,22 @@ export function Cotizacion() {
       </div>
       <div style={{ background: '#002857' }}>
         <div className="container" style={{ paddingTop: '70px' }}>
-          <CotizacionCard />
+          {/* <CotizacionCard /> */}
+
+        <div className="">
+                <div className="row" style={{ paddingTop: '20px' }}>
+                  <div className="col-md-12 coll-sm-12 row__iframe__Cotizador">
+                    <iframe
+                      id="cotizador"
+                      //   src="https://aburramotos.7-24.co/mercadeo/leads/iframe/2f4c07b6b8b5abfee7ed89cd0befe0dd/"
+                      src={rutaIframe}
+                      name="myIFrame"
+                      allow="geolocation"
+                      className="iframe__row__Cotizador"
+                    ></iframe>
+                  </div>
+                </div>
+              </div>
         </div>
       </div>
       <div style={{ background: '#ffffff' }}>
@@ -71,7 +95,7 @@ export function Cotizacion() {
           </div>
           <div className="cotizacion-container-card">
 
-            {dataCotizacion.map((item, index) => (
+           {dataCotizacion.map((item, index) => (
               <div className="col-sm-12 col-md-4 col-lg-3 col-xl-3">
                 <CardCotizacion
                   key={index}
@@ -81,8 +105,7 @@ export function Cotizacion() {
                   color={item.color}
                 />
               </div>
-            ))}
-
+            ))} 
 
           </div>
         </div>

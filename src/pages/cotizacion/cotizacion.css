@@ -66,3 +66,18 @@
     background-color: #002857; 
     border-radius: 4px;
   }
+  .row__iframe__Cotizador{
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    overflow-x: hidden;
+    padding-bottom: 20px;
+    
+}
+.row__iframe__Cotizador iframe{
+    width: 80%;              
+    height: 1000px;           
+    border: none;          
+    border-radius: 8px;    
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}

@@ -167,7 +167,7 @@ export function Home() {
     const { productos, productoSeleccionado, marcaFiltro, getProductos, getSegmentos, segmentos, configuracionData = [], desplazamiento, getCofiguracion } = useContext(LanguageContext);
     useEffect(() => {
         getProductos();
-        console.log(productos)
+        // console.log(productos)
 
     }, []);
     useEffect(() => {

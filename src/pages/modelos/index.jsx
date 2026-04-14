@@ -93,6 +93,10 @@ export function Modelos() {
         }
     };
 
+    useEffect(() => {
+        localStorage.setItem('producto', '');
+      }, []);
+
     const rutaImagenFondo =
         window.innerWidth <= 576
             ? "/images/FondoModelosCelular.png"

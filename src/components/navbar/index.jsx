@@ -27,7 +27,7 @@ const Navbar = () => {
     if (menu?.classList.contains("show")) {
       menu.classList.remove("show");
     }
-
+    localStorage.setItem('producto', '')
   };
 
   const handleNavigation = (id) => {
@@ -43,6 +43,7 @@ const Navbar = () => {
       closeMobileMenu();
     }
     setIsOpen(false); 
+    localStorage.setItem('producto', '')
   };
   const handleClickWhatsapp = () => {
     
