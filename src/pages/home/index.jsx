@@ -83,6 +83,15 @@ export function Home() {
             email: 'bello@auteco.com',
             rutagoogle: 'https://www.google.com/maps/search/Carrera+50+33-90+Bello'
         }
+        ,
+        {
+            nombre: 'Bogotá - Las Ferias',
+            direccion: 'Calle 72 # 68G - 23 Lc2, Bogotá',
+            telefono: '3192023058',
+            horario: 'Lunes a Sábado: 07:00 AM - 06:00 PM',
+            email: 'bello@auteco.com',
+            rutagoogle: 'https://www.google.com/maps/search/Calle+72+68G-23+Lc2+Bogotá'
+        }
     ]
     const jsonelegirnos = [
 
@@ -451,7 +460,7 @@ export function Home() {
                     </div>
                     <div className='row g-4 align-items-stretch' style={{ paddingBottom: '20px' }}>
                         {jsonsedes.map((item, index) => (
-                            <div className="col-sm-12 col-md-6 col-lg-6" key={index}>
+                            <div className="col-sm-12 col-md-6 col-lg-4" key={index}>
                                 <CardSedes
                                     key={index}
                                     titulo={item.nombre}

@@ -25,22 +25,22 @@ const CardSedes = ({ titulo, direccion, telefono, horario, email, rutaMaps }) =>
       </div>
 
       {/* Horario */}
-      <div className="sedes-item">
+      {/* <div className="sedes-item">
         <span className="sedes-icono"><Clock /></span>
         <div>
           <p className="sedes-label">Horario de atención</p>
           <p className="sedes-text">{horario}</p>
         </div>
-      </div>
+      </div> */}
 
       {/* Email */}
-      <div className="sedes-item">
+      {/* <div className="sedes-item">
         <span className="sedes-icono"><Mail /></span>
         <div>
           <p className="sedes-label">Email</p>
           <p className="sedes-text">{email}</p>
         </div>
-      </div>
+      </div> */}
 
       {/* Botón */}
       <a
